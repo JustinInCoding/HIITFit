@@ -20,7 +20,14 @@
 Xcode - 15.4 (the version I created the project)
 
 ## Tips and Learned
-- 
+
+- Xcode Tip: Delimiter auto-completion works for curly and square braces, parentheses and quotation marks: Select the text you want to enclose, then type the start delimiter character
+- Control-Option-click the view to pop up its Attributes inspector
+- Xcode Tip: The show-inspectors button (upper right toolbar) opens the right-hand panel. The Attributes inspector is the right-most tab in this panel. If you’re working on a small screen and just want to edit one attribute, Control-Option-click a view in the code editor to use the pop-up inspector. It uses less space.
+- use `tabViewStyle(PageTabViewStyle())` to make the tabs behave like pages
+- `.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))` to make the tabs show up
+- creating and grouping project files
+
 
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book
