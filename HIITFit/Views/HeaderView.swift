@@ -31,12 +31,13 @@
 import SwiftUI
 
 struct HeaderView: View {
-	let exerciseName: String
+	let titleText: String
 	var body: some View {
 		VStack {
-			Text(exerciseName)
+			Text(titleText)
 				.font(.largeTitle)
 			HStack {
+				Image(systemName: "hand.wave")
 				Image(systemName: "1.circle")
 				Image(systemName: "2.circle")
 				Image(systemName: "3.circle")
@@ -48,5 +49,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-	HeaderView(exerciseName: "Squat")
+	HeaderView(titleText: "Squat")
 }

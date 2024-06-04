@@ -63,6 +63,14 @@ struct xxx_Previews: PreviewProvider {
 - Formatting Quick Help Comments [reference](https://apple.co/33hohbk)
 - check whether the current Build Configuration is Debug, click the Scheme menu button (next to the run destination menu). Select Edit Scheme…, then select the Info tab.
 - Preview Content. Anything you put into this group will not be included in your release version
+- often used together when modifiying an image
+```
+    .resizable()
+    .aspectRatio(contentMode: .fill)
+    .frame(width: xxx, height: xxx)
+
+```
+
 
 
 ## Key Points

@@ -32,7 +32,41 @@ import SwiftUI
 
 struct WelcomeView: View {
 	var body: some View {
-		Text("Hello, World!")
+		ZStack {
+			VStack {
+				HStack(alignment: .bottom) {
+					VStack(alignment: .leading) {
+						Text("Get fit")
+							.font(.largeTitle)
+						Text("with high intensity interval training")
+							.font(.headline)
+					}
+					Image("step-up")
+						.resizedToFill(width: 240, height: 240)
+						.clipShape(Circle())
+				}
+				Button {
+
+				} label: {
+					Text("Get Started")
+					Image(systemName: "arrow.right.circle")
+				}
+				.font(.title2)
+				.padding()
+				.background(
+					RoundedRectangle(cornerRadius: 20.0)
+						.strokeBorder(Color.gray, lineWidth: 2.0)
+				)
+			}
+			VStack {
+				HeaderView(titleText: "Welcome")
+				Spacer()
+				Button("History") {
+
+				}
+				.padding(.bottom)
+			}
+		}
 	}
 }
 
