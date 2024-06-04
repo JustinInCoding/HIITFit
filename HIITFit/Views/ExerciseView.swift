@@ -31,6 +31,7 @@
 import SwiftUI
 
 struct ExerciseView: View {
+	@State private var rating = 0
 	@Binding var selectedTab: Int
 	let index: Int
 	let interval: TimeInterval = 30
@@ -52,7 +53,7 @@ struct ExerciseView: View {
 	var body: some View {
 		GeometryReader { geometry in
 			VStack {
-				HeaderView(titleText: exercise.exerciseName)
+				HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
 					.padding(.bottom)
 				VideoPlayerView(videoName: exercise.videoName)
 					.frame(height: geometry.size.height * 0.45)
@@ -65,7 +66,7 @@ struct ExerciseView: View {
 				}
 				.font(.title3)
 				.padding()
-				RatingView()
+				RatingView(rating: $rating)
 					.padding()
 				Spacer()
 				Button("History") {}

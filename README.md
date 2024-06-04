@@ -9,6 +9,7 @@
 
 - Use Form and Section to display History View
 - Use dev data when developing rather than on release by conditional compilation and with Preview Content
+- The onTapGesture modifier is used to add action on non-button view
 
 
 ## Features
