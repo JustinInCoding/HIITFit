@@ -8,7 +8,7 @@
 ## Technologies Used
 
 - Use Form and Section to display History View
-- Use dev data when developing rather than on release by conditional compilation
+- Use dev data when developing rather than on release by conditional compilation and with Preview Content
 
 
 ## Features
@@ -104,6 +104,18 @@ struct xxx_Previews: PreviewProvider {
 - An enumeration is a named type, useful for grouping related values so the compiler can help you avoid mistakes like misspelling a string.
 - Swift is a strongly typed programming language.
 - GeometryReader enables you to set a view’s dimensions relative to the screen dimensions.
+
+- The Date type has many built-in properties and methods. You need to configure a DateFormatter to create meaningful text to show your users.
+- Use the Form container view to quickly lay out table data.
+- ForEach lets you loop over the items in a collection.
+To use a collection in a ForEach loop, it needs to have a way to uniquely identify each of its elements. The easiest way is to make it conform to Identifiable and include id: UUID as a property.
+- Use compiler directives to create development data only while you’re developing and not in the release version of your app.
+- Preview Content is a convenient place to store code and data you use only while developing. Its contents won’t be included in the release version of your app.
+- ZStack is useful for keeping views in one layer centered while pushing views in another layer to the edges.
+- You can specify vertical alignment values for HStack, horizontal alignment values for VStack and combination alignment values for ZStack.
+- Xcode helps you to refactor the name of a parameter quickly and safely.
+- Image often needs the same three modifiers. You can create a custom modifier so you Don’t Repeat Yourself.
+- A Button has a label and an action. You can define a Button a few different ways.
 
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book

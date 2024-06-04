@@ -26,6 +26,7 @@
 		98D709382C0EE7CD00F60FEC /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D709372C0EE7CD00F60FEC /* HistoryStore.swift */; };
 		98D7093B2C0EE7FB00F60FEC /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7093A2C0EE7FB00F60FEC /* Exercise.swift */; };
 		98D7093D2C0EEA8500F60FEC /* HistoryStoreDevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7093C2C0EEA8500F60FEC /* HistoryStoreDevData.swift */; };
+		98D7093F2C0EF81200F60FEC /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7093E2C0EF81200F60FEC /* SuccessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		98D709372C0EE7CD00F60FEC /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
 		98D7093A2C0EE7FB00F60FEC /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		98D7093C2C0EEA8500F60FEC /* HistoryStoreDevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStoreDevData.swift; sourceTree = "<group>"; };
+		98D7093E2C0EF81200F60FEC /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				98D709312C0EC20F00F60FEC /* RatingView.swift */,
 				98D709332C0EC47500F60FEC /* VideoPlayerView.swift */,
 				98D709352C0ED86000F60FEC /* HistoryView.swift */,
+				98D7093E2C0EF81200F60FEC /* SuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				98D709322C0EC20F00F60FEC /* RatingView.swift in Sources */,
 				98D709382C0EE7CD00F60FEC /* HistoryStore.swift in Sources */,
 				98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */,
+				98D7093F2C0EF81200F60FEC /* SuccessView.swift in Sources */,
 				98D709362C0ED86000F60FEC /* HistoryView.swift in Sources */,
 				98698A9E2C0DC2FF007C6B3F /* DateExtension.swift in Sources */,
 				98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */,
