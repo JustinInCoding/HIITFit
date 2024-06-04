@@ -23,6 +23,7 @@
 		98D709302C0EBA1100F60FEC /* sun-salute.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 98698AA52C0DCD1A007C6B3F /* sun-salute.mp4 */; };
 		98D709322C0EC20F00F60FEC /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D709312C0EC20F00F60FEC /* RatingView.swift */; };
 		98D709342C0EC47500F60FEC /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D709332C0EC47500F60FEC /* VideoPlayerView.swift */; };
+		98D709362C0ED86000F60FEC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D709352C0ED86000F60FEC /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		98D7092B2C0EAD7800F60FEC /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = HIITFit/Exercise.swift; sourceTree = SOURCE_ROOT; };
 		98D709312C0EC20F00F60FEC /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		98D709332C0EC47500F60FEC /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		98D709352C0ED86000F60FEC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				98D709292C0EA97700F60FEC /* HeaderView.swift */,
 				98D709312C0EC20F00F60FEC /* RatingView.swift */,
 				98D709332C0EC47500F60FEC /* VideoPlayerView.swift */,
+				98D709352C0ED86000F60FEC /* HistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				98698AA72C0DD5AA007C6B3F /* WelcomeView.swift in Sources */,
 				98D709322C0EC20F00F60FEC /* RatingView.swift in Sources */,
 				98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */,
+				98D709362C0ED86000F60FEC /* HistoryView.swift in Sources */,
 				98698A9E2C0DC2FF007C6B3F /* DateExtension.swift in Sources */,
 				98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */,
 				98698AA02C0DCAC2007C6B3F /* ImageExtension.swift in Sources */,
