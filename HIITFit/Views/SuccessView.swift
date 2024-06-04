@@ -31,12 +31,13 @@
 import SwiftUI
 
 struct SuccessView: View {
+	@Environment(\.dismiss) var dismiss
 	var body: some View {
 		ZStack {
 			VStack {
 				Spacer()
 				Button {
-
+					dismiss()
 				} label: {
 					Text("Continue")
 				}
@@ -60,6 +61,7 @@ struct SuccessView: View {
 					.foregroundColor(.gray)
 			}
 		}
+		.presentationDetents([.medium, .large])
 	}
 }
 

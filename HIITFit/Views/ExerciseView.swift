@@ -31,6 +31,8 @@
 import SwiftUI
 
 struct ExerciseView: View {
+	@State private var showSuccess = false
+	@State private var showHistory = false
 	@State private var rating = 0
 	@Binding var selectedTab: Int
 	let index: Int
@@ -47,8 +49,15 @@ struct ExerciseView: View {
 	}
 	var doneButton: some View {
 		Button("Done") {
-			selectedTab = lastExercise ? 9 : selectedTab + 1
+			if lastExercise {
+				showSuccess.toggle()
+			} else {
+				selectedTab += 1
+			}
 		}
+		.sheet(isPresented: $showSuccess, content: {
+			SuccessView()
+		})
 	}
 	var body: some View {
 		GeometryReader { geometry in
@@ -69,7 +78,12 @@ struct ExerciseView: View {
 				RatingView(rating: $rating)
 					.padding()
 				Spacer()
-				Button("History") {}
+				Button("History") {
+					showHistory.toggle()
+				}
+				.sheet(isPresented: $showHistory, content: {
+					HistoryView(showHistory: $showHistory)
+				})
 					.padding(.bottom)
 			}
 		}
@@ -77,7 +91,7 @@ struct ExerciseView: View {
 }
 
 #Preview {
-	ExerciseView(selectedTab: .constant(1), index: 1)
+	ExerciseView(selectedTab: .constant(3), index: 3)
 }
 
 
