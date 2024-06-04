@@ -6,7 +6,8 @@
 
 
 ## Technologies Used
-- 
+- using the Text view’s (_:style:) initializer for displaying dates and times
+- use GeometryReader to make the subviews fit the device's size
 
 ## Features
 - A Welcome screen with text, images and a button.
@@ -39,6 +40,23 @@ Xcode - 15.4 (the version I created the project)
 - use `tabViewStyle(PageTabViewStyle())` to make the tabs behave like pages
 - `.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))` to make the tabs show up
 - creating and grouping project files
+- Note: Putting the modifier on its own line is a SwiftUI convention. A view often has several modifiers, each on its own line. This makes it easy to move a modifier up or down, because sometimes the order makes a difference.
+- The [SF Symbols app](https://apple.co/3hWxn3G) is the best way to browse and explore the collection
+- A type property belongs to the type, and you declare it with the static keyword.
+- if you get the result of no resource of main bundle, try to check the build phase's Copy bundle Reources
+- Swift Tip: It’s good programming practice to replace unused parameter names with _. The alternative is to create a throwaway name, which takes a non-zero amount of time and focus and will confuse you and other programmers reading your code.
+- Note that if you use the `#Preview` macro, `.sizeThatFits` will not work, even if you use the static preview containter.
+```
+struct xxx_Previews: PreviewProvider {
+	static var previews: some View {
+		xxx()
+			.previewLayout(.sizeThatFits)
+	}
+}
+```
+
+
+
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.
@@ -61,6 +79,16 @@ Xcode - 15.4 (the version I created the project)
 - To run your app on an iOS device, you must enable Developer Mode on the device and add a Team to the project to get a signing certificate.
 - The first time you run your project on an iOS device, Apple requires you to complete a “Trust this developer” step.
 
+- Declare SwiftUI views in the order you want them to appear.
+- Create separate views for your user interface elements. This makes your code easier to read and maintain.
+- Put each view modifier on its own line. This makes it easy to move or delete a modifier.
+- Xcode and SwiftUI auto-suggestions and default values are often what you want.
+- Let Xcode help you avoid errors: Use the Command-menu to embed or extract views.
+- The SF Symbols app and Xcode’s Symbols Library provide icon images you can configure like text.
+- Preview variants make it easy to check your interface for different user settings.
+- An enumeration is a named type, useful for grouping related values so the compiler can help you avoid mistakes like misspelling a string.
+- Swift is a strongly typed programming language.
+- GeometryReader enables you to set a view’s dimensions relative to the screen dimensions.
 
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book

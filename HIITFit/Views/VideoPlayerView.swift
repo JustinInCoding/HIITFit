@@ -29,40 +29,25 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+// Importing AVKit lets you use high-level types like AVPlayer to play videos with the usual playback controls.
+import AVKit
 
-struct ExerciseView: View {
-	let index: Int
-	let interval: TimeInterval = 30
-	var exercise: Exercise {
-		Exercise.exercises[index]
-	}
+struct VideoPlayerView: View {
+	let videoName: String
 	var body: some View {
-		GeometryReader { geometry in
-			VStack {
-				HeaderView(exerciseName: exercise.exerciseName)
-					.padding(.bottom)
-				VideoPlayerView(videoName: exercise.videoName)
-					.frame(height: geometry.size.height * 0.45)
-				// The Date method addingTimeInterval(_ timeInterval:) adds interval seconds to this value
-				Text(Date().addingTimeInterval(interval), style: .timer)
-					.font(.system(size: geometry.size.height * 0.07))
-				Button("Start/Done") {}
-					.font(.title3)
-					.padding()
-				RatingView()
-					.padding()
-				Spacer()
-				Button("History") {}
-					.padding(.bottom)
-			}
+		// Command-click VideoPlayer and select Make Conditional
+		// you can access as Bundle.main. Its method url(forResource:withExtension:) gets you the URL of a file in the main app bundle if it exists. Otherwise, it returns nil which means no value. The return type of this method is an Optional type, URL?
+		// make sure the build phases's copy bundle resource has the resources
+		if let url = Bundle.main.url(forResource: videoName, withExtension: "mp4") {
+			VideoPlayer(player: AVPlayer(url: url))
+		} else {
+			Text("Couldn't find \(videoName).mp4")
+				.foregroundColor(.red)
 		}
+
 	}
 }
 
 #Preview {
-	ExerciseView(index: 0)
+	VideoPlayerView(videoName: "squat")
 }
-
-
-
-

@@ -30,39 +30,21 @@
 
 import SwiftUI
 
-struct ExerciseView: View {
-	let index: Int
-	let interval: TimeInterval = 30
-	var exercise: Exercise {
-		Exercise.exercises[index]
-	}
+struct RatingView: View {
 	var body: some View {
-		GeometryReader { geometry in
-			VStack {
-				HeaderView(exerciseName: exercise.exerciseName)
-					.padding(.bottom)
-				VideoPlayerView(videoName: exercise.videoName)
-					.frame(height: geometry.size.height * 0.45)
-				// The Date method addingTimeInterval(_ timeInterval:) adds interval seconds to this value
-				Text(Date().addingTimeInterval(interval), style: .timer)
-					.font(.system(size: geometry.size.height * 0.07))
-				Button("Start/Done") {}
-					.font(.title3)
-					.padding()
-				RatingView()
-					.padding()
-				Spacer()
-				Button("History") {}
-					.padding(.bottom)
+		HStack {
+			ForEach(0 ..< 5) { _ in
+				Image(systemName: "waveform.path.ecg")
+					.foregroundColor(.gray)
+					.font(.largeTitle)
 			}
 		}
 	}
 }
 
-#Preview {
-	ExerciseView(index: 0)
+struct RatingView_Previews: PreviewProvider {
+	static var previews: some View {
+		RatingView()
+			.previewLayout(.sizeThatFits)
+	}
 }
-
-
-
-
