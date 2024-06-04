@@ -56,7 +56,7 @@ struct ExerciseView: View {
 			}
 		}
 		.sheet(isPresented: $showSuccess, content: {
-			SuccessView()
+			SuccessView(selectedTab: $selectedTab)
 		})
 	}
 	var body: some View {
