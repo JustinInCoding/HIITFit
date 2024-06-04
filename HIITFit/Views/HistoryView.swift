@@ -33,17 +33,29 @@ import SwiftUI
 struct HistoryView: View {
 	var historyStore = HistoryStore()
 	var body: some View {
-		Text("History")
-			.font(.title)
-			.padding()
-		Form {
-			ForEach(historyStore.exerciseDays) { day in
-				Section(
-					header: Text(day.date.formatted(as: "MMM d"))
-						.font(.headline)
-				) {
-					ForEach(day.exercises, id: \.self) { exercise in
-						Text(exercise)
+		ZStack(alignment: .topTrailing) {
+			Button {
+
+			} label: {
+				Image(systemName: "xmark.circle")
+					.font(.title)
+					.padding([.trailing, .top])
+			}
+
+			VStack {
+				Text("History")
+					.font(.title)
+				.padding()
+				Form {
+					ForEach(historyStore.exerciseDays) { day in
+						Section(
+							header: Text(day.date.formatted(as: "MMM d"))
+								.font(.headline)
+						) {
+							ForEach(day.exercises, id: \.self) { exercise in
+								Text(exercise)
+							}
+						}
 					}
 				}
 			}
