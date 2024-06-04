@@ -11,6 +11,7 @@
 - Use dev data when developing rather than on release by conditional compilation and with Preview Content
 - The onTapGesture modifier is used to add action on non-button view
 - use .presentationDetents([.medium, .large]) of the presented view to make the sheet shorter on iphone
+- use @Binding Bool value or @Environment(\.dismiss) to dismiss a modal sheet
 
 
 ## Features
@@ -120,6 +121,13 @@ To use a collection in a ForEach loop, it needs to have a way to uniquely identi
 - Xcode helps you to refactor the name of a parameter quickly and safely.
 - Image often needs the same three modifiers. You can create a custom modifier so you Don’t Repeat Yourself.
 - A Button has a label and an action. You can define a Button a few different ways.
+
+- Declarative app development means you declare both how you want the views in your UI to look and also what data they depend on. The SwiftUI framework takes care of creating views when they should appear and updating them whenever there’s a change to data they depend on.
+- Data access = dependency: Reading a piece of data in your view creates a dependency for that data in that view.
+- Single source of truth: Every piece of data has a source of truth, internal or external. Regardless of where the source of truth lies, you should always have a single source of truth.
+- Property wrappers augment the behavior of properties: @State, @Binding and @EnvironmentObject declare a view’s dependency on the data represented by the property.
+- @Binding declares dependency on a @State property owned by another view. @EnvironmentObject declares dependency on some shared data, like a reference type that conforms to ObservableObject.
+- Use Boolean @State properties to show and hide modal sheets or subviews. Use @Environment(\.dismiss) as another way to dismiss a modal sheet.
 
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book
