@@ -28,29 +28,20 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-struct HistoryView: View {
-	var historyStore = HistoryStore()
-	var body: some View {
-		Text("History")
-			.font(.title)
-			.padding()
-		Form {
-			ForEach(historyStore.exerciseDays) { day in
-				Section(
-					header: Text(day.date.formatted(as: "MMM d"))
-						.font(.headline)
-				) {
-					ForEach(day.exercises, id: \.self) { exercise in
-						Text(exercise)
-					}
-				}
-			}
-		}
-	}
+struct ExerciseDay: Identifiable {
+	let id = UUID()
+	let date: Date
+	var exercises: [String] = []
 }
 
-#Preview {
-	HistoryView()
+struct HistoryStore {
+	var exerciseDays: [ExerciseDay] = []
+
+	init() {
+		#if DEBUG
+		createDevData()
+		#endif
+	}
 }

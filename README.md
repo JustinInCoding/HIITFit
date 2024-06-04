@@ -8,6 +8,8 @@
 ## Technologies Used
 
 - Use Form and Section to display History View
+- Use dev data when developing rather than on release by conditional compilation
+
 
 ## Features
 - A Welcome screen with text, images and a button.
@@ -59,6 +61,8 @@ struct xxx_Previews: PreviewProvider {
 - Swift Tip: A Date object is just some number of seconds relative to January 1, 2001 00:00:00 UTC. To display it as a calendar date in a particular time zone, you must use a DateFormatter. This class has a few built-in styles named short, medium, long and full, described in links from the developer documentation page for DateFormatter.Style. You can also specify your own format as a String.
 - Swift Tip: You can add methods to extend any type, including those built into the software development kit, like Image and Date. Then, you can use them the same way you use the built-in methods.
 - Formatting Quick Help Comments [reference](https://apple.co/33hohbk)
+- check whether the current Build Configuration is Debug, click the Scheme menu button (next to the run destination menu). Select Edit Scheme…, then select the Info tab.
+- Preview Content. Anything you put into this group will not be included in your release version
 
 
 ## Key Points
