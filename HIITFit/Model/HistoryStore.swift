@@ -41,13 +41,13 @@ class HistoryStore: ObservableObject {
 
 	init() {
 		#if DEBUG
-		createDevData()
+//		createDevData()
 		#endif
 	}
 
 	func addDoneExercise(_ exerciseName: String) {
 		let today = Date()
-		if today.isSameDay(as: exerciseDays[0].date) {
+		if let firstDate = exerciseDays.first?.date, today.isSameDay(as: firstDate) {
 			exerciseDays[0].exercises.append(exerciseName)
 		} else {
 			exerciseDays.insert(
