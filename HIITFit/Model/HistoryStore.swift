@@ -38,6 +38,7 @@ struct ExerciseDay: Identifiable {
 
 class HistoryStore: ObservableObject {
 	@Published var exerciseDays: [ExerciseDay] = []
+	@Published var loadingError = false
 
 	enum FileError: Error {
 		case loadFailure
@@ -52,7 +53,7 @@ class HistoryStore: ObservableObject {
 		do {
 			try load()
 		} catch {
-			print("Error:", error)
+			loadingError = true
 		}
 	}
 
