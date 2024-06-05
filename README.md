@@ -135,6 +135,10 @@ To use a collection in a ForEach loop, it needs to have a way to uniquely identi
 - @Binding declares dependency on a @State property owned by another view. @EnvironmentObject declares dependency on some shared data, like a reference type that conforms to ObservableObject.
 - Use Boolean @State properties to show and hide modal sheets or subviews. Use @Environment(\.dismiss) as another way to dismiss a modal sheet.
 
+- Implement a countdown timer by creating a TimelineView with an animation(minimumInterval:paused:) schedule to update CountdownView every 1 second.
+- @Binding declares a dependency on a @State property owned by another view. @EnvironmentObject declares a dependency on some shared data, such as a reference type that conforms to ObservableObject.
+- Use an ObservableObject as an @EnvironmentObject to let subviews access data without having to pass parameters.
+
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book
 - Original Repository of Kodeco [_here_](https://github.com/kodecocodes/suia-materials/tree/editions/2.0).
