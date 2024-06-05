@@ -92,7 +92,10 @@ struct xxx_Previews: PreviewProvider {
 - URL.libraryDirectory: Library/. The directory for files that you don’t want to expose to the user.
 - URL.cachesDirectory: Library/Caches/. Temporary cache files. You might use this if you expand a zipped file and temporarily access the contents in your app.
 - iPhone and iPad backups will save Documents and Library, excluding Library/Caches.
-- UserDefaults file locates in Library/Preferences 
+- UserDefaults file locates in Library/Preferences
+- you can’t index directly into a String, text.index(_:offsetBy:) returns a String.Index, You can then use this special index in square brackets
+- Note: You can do so much string manipulation that you’ll need [Use Your Loaf’s Swift String cheat sheet](https://useyourloaf.com/blog/swift-string-cheat-sheet/)
+- Note: You can find more information about RangeExpressions in the [official Apple documentation](https://developer.apple.com/documentation/swift/rangeexpression).
 
 
 ## Key Points

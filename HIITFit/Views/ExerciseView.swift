@@ -91,7 +91,7 @@ struct ExerciseView: View {
 					)
 				}
 				Spacer()
-				RatingView(rating: $rating)
+				RatingView(exerciseIndex: index)
 					.padding()
 				Button("History") {
 					showHistory.toggle()
@@ -106,7 +106,7 @@ struct ExerciseView: View {
 }
 
 #Preview {
-	ExerciseView(selectedTab: .constant(3), index: 3)
+	ExerciseView(selectedTab: .constant(0), index: 0)
 		.environmentObject(HistoryStore())
 }
 

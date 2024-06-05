@@ -31,11 +31,23 @@
 import SwiftUI
 
 struct RatingView: View {
-	@Binding var rating: Int
+	@AppStorage("ratings") private var ratings: String = "4000"
+	@State private var rating = 0
+	let exerciseIndex: Int
 	let maximunRating = 5
 
 	let onColor = Color.red
 	let offColor = Color.gray
+
+	func updateRating(index: Int) {
+		rating = index
+		let index = ratings.index(
+			ratings.startIndex,
+			offsetBy: exerciseIndex
+		)
+		// create a RangeExpression with index...index and replace the range with the new rating
+		ratings.replaceSubrange(index...index, with: String(rating))
+	}
 
 	var body: some View {
 		HStack {
@@ -45,7 +57,19 @@ struct RatingView: View {
 						index > rating ? offColor : onColor
 					)
 					.onTapGesture {
-						rating = index
+						updateRating(index: index)
+					}
+					// app runs onAppear(perform:) every time the view appears
+					.onAppear() {
+						// ratings is labeled as @AppStorage so its value is stored in the UserDefaults property list file. You create a String.Index to index into the string using exerciseIndex.
+						let index = ratings.index(
+							ratings.startIndex,
+							offsetBy: exerciseIndex
+						)
+						// extract the correct character from the string using the String.Index.
+						let character = ratings[index]
+						// use nil coalescing operator to Convert the character to an integer. If the character is not an integer, the result of wholeNumberValue will be an optional value of nil.
+						rating = character.wholeNumberValue ?? 0
 					}
 			}
 		}
@@ -54,8 +78,10 @@ struct RatingView: View {
 }
 
 struct RatingView_Previews: PreviewProvider {
+	@AppStorage("ratings") static var ratings: String?
 	static var previews: some View {
-		RatingView(rating: .constant(3))
+		ratings = nil
+		return RatingView(exerciseIndex: 0)
 			.previewLayout(.sizeThatFits)
 	}
 }
