@@ -103,6 +103,8 @@ struct xxx_Previews: PreviewProvider {
 - Locate Application Scene Manifest in the Custom iOS Target Properties, and open the disclosure indicator. Enable Multiple Windows has a value of YES
 - by using @SceneStorage, you can persist the current state of each scene of your app, @SceneStorage properties persist per scene.
 - To reset SceneStorage in Simulator, you will have to clear the cache. In Simulator, choose Device ▸ Erase All Content and Settings… and then re-run your app.
+- Swift Tip: Optional is actually an enumeration with two cases: some(Wrapped) and none, where some has a generic value of type Wrapped and none has no value.
+- Note: When the test is a simple one, you can shorten the test and assignment from if let varName = varName {...} to if let varName {...}.
 
 
 ## Key Points
