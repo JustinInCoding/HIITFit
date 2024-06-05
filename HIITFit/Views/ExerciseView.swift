@@ -31,6 +31,7 @@
 import SwiftUI
 
 struct ExerciseView: View {
+	@EnvironmentObject var historyStore: HistoryStore
 	@State private var showSuccess = false
 	@State private var showHistory = false
 	@State private var rating = 0
@@ -52,6 +53,7 @@ struct ExerciseView: View {
 	}
 	var doneButton: some View {
 		Button("Done") {
+			historyStore.addDoneExercise(exercise.exerciseName)
 			timerDone = false
 			showTimer.toggle()
 			if lastExercise {
@@ -105,6 +107,7 @@ struct ExerciseView: View {
 
 #Preview {
 	ExerciseView(selectedTab: .constant(3), index: 3)
+		.environmentObject(HistoryStore())
 }
 
 

@@ -13,6 +13,7 @@
 - use .presentationDetents([.medium, .large]) of the presented view to make the sheet shorter on iphone
 - use @Binding Bool value or @Environment(\.dismiss) to dismiss a modal sheet
 - use TimelineView instead of Text to implement the count down
+- use @environmentObject to avoid just passing through object to the next view/page
 
 
 ## Features
@@ -77,7 +78,8 @@ struct xxx_Previews: PreviewProvider {
 - A @State property is a source of truth. One view owns it and passes either its value or a reference, known as a binding, to its subviews.
 - A @Binding property is a reference to a @State property owned by another view. It gets its initial value when the other view passes it a binding, using the $ prefix. Having this reference to the source of truth enables the subview to change the property’s value, and this changes the state of any view that depends on this property.
 - @EnvironmentObject declares dependency on some shared data — data that’s visible to all views in a sub-tree of the app. It’s a convenient way to pass data indirectly instead of passing data from parent view to child to grandchild, especially if the in-between child view doesn’t need it.
-- Swift has a TimelineView container that redraws its content at scheduled times. use `animation(minimumInterval:paused:)` to implement the TimeView 
+- Swift has a TimelineView container that redraws its content at scheduled times. use `animation(minimumInterval:paused:)` to implement the TimeView
+- To be an @EnvironmentObject, it must conform to ObservableObject. An ObservableObject is a publisher. Also to conform to ObservableObject, it must be a class, not a structure.
 
 
 ## Key Points
