@@ -4,6 +4,8 @@
 
 > This project is for me to learn from kodeco's iOS book SwiftUI Apprentice. Here I try to grasp the knowledge of SwiftUI by recording the steps of building the app.
 
+## Branches
+- The Challenge branch is the approach of the challenge in the books for not pollute the main one.
 
 ## Technologies Used
 
