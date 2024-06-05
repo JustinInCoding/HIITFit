@@ -23,6 +23,7 @@
 - use @SceneStorage to remeber the selected tab last time you left the app
 - use try...catch with error to handle the error may be caused by load from or save to a file
 - use Alert to inform user loading file error
+- use map to transform exerciseDay to plistData
 
 
 ## Features

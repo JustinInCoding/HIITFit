@@ -45,6 +45,11 @@ class HistoryStore: ObservableObject {
 		case saveFailure
 	}
 
+	var dataURL: URL {
+		URL.documentsDirectory
+			.appendingPathComponent("history.plist")
+	}
+
 	init() {
 //		#if DEBUG
 //		createDevData()
@@ -58,7 +63,13 @@ class HistoryStore: ObservableObject {
 	}
 
 	func load() throws {
-		throw FileError.loadFailure
+
+	}
+
+	func save() throws {
+		let plistData = exerciseDays.map {
+			[$0.id.uuidString, $0.date, $0.exercises]
+		}
 	}
 
 	func addDoneExercise(_ exerciseName: String) {
