@@ -44,7 +44,6 @@ struct ContentView: View {
 		.onAppear() {
 			print(URL.documentsDirectory)
 		}
-		.environmentObject(HistoryStore())
 		.tabViewStyle(PageTabViewStyle())
 		.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
 	}
