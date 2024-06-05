@@ -62,7 +62,20 @@ struct RatingView: View {
 		// create a RangeExpression with index...index and replace the range with the new rating
 		ratings.replaceSubrange(index...index, with: String(rating))
 	}
-
+	
+	// Note the fileprivate access control modifier in the new method. This modifier allows access to convertRating() only inside RatingView.swift.
+	fileprivate func convertRating() {
+		// ratings is labeled as @AppStorage so its value is stored in the UserDefaults property list file. You create a String.Index to index into the string using exerciseIndex.
+		let index = ratings.index(
+			ratings.startIndex,
+			offsetBy: exerciseIndex
+		)
+		// extract the correct character from the string using the String.Index.
+		let character = ratings[index]
+		// use nil coalescing operator to Convert the character to an integer. If the character is not an integer, the result of wholeNumberValue will be an optional value of nil.
+		rating = character.wholeNumberValue ?? 0
+	}
+	
 	var body: some View {
 		HStack {
 			ForEach(1 ..< maximunRating + 1, id: \.self) { index in
@@ -75,15 +88,10 @@ struct RatingView: View {
 					}
 					// app runs onAppear(perform:) every time the view appears
 					.onAppear() {
-						// ratings is labeled as @AppStorage so its value is stored in the UserDefaults property list file. You create a String.Index to index into the string using exerciseIndex.
-						let index = ratings.index(
-							ratings.startIndex,
-							offsetBy: exerciseIndex
-						)
-						// extract the correct character from the string using the String.Index.
-						let character = ratings[index]
-						// use nil coalescing operator to Convert the character to an integer. If the character is not an integer, the result of wholeNumberValue will be an optional value of nil.
-						rating = character.wholeNumberValue ?? 0
+						convertRating()
+					}
+					.onChange(of: ratings) { _, _ in
+						convertRating()
 					}
 			}
 		}

@@ -18,6 +18,8 @@
 - use @environmentObject to avoid just passing through object to the next view/page
 - use @AppStorage to save rating
 - add initializer to the RatingView for preventing miss match the length of ratings and exercises's count
+- make app supports multiple windows then u can have the app with others or have two exercises together on iPad
+- use onChange again to make two windows' rating value sync.
 
 
 ## Features
@@ -97,6 +99,7 @@ struct xxx_Previews: PreviewProvider {
 - you can’t index directly into a String, text.index(_:offsetBy:) returns a String.Index, You can then use this special index in square brackets
 - Note: You can do so much string manipulation that you’ll need [Use Your Loaf’s Swift String cheat sheet](https://useyourloaf.com/blog/swift-string-cheat-sheet/)
 - Note: You can find more information about RangeExpressions in the [official Apple documentation](https://developer.apple.com/documentation/swift/rangeexpression).
+- Locate Application Scene Manifest in the Custom iOS Target Properties, and open the disclosure indicator. Enable Multiple Windows has a value of YES
 
 
 ## Key Points
