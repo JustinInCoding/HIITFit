@@ -16,6 +16,7 @@
 - use @Binding Bool value or @Environment(\.dismiss) to dismiss a modal sheet
 - use TimelineView instead of Text to implement the count down
 - use @environmentObject to avoid just passing through object to the next view/page
+- use @AppStorage to save rating
 
 
 ## Features
@@ -82,6 +83,8 @@ struct xxx_Previews: PreviewProvider {
 - @EnvironmentObject declares dependency on some shared data — data that’s visible to all views in a sub-tree of the app. It’s a convenient way to pass data indirectly instead of passing data from parent view to child to grandchild, especially if the in-between child view doesn’t need it.
 - Swift has a TimelineView container that redraws its content at scheduled times. use `animation(minimumInterval:paused:)` to implement the TimeView
 - To be an @EnvironmentObject, it must conform to ObservableObject. An ObservableObject is a publisher. Also to conform to ObservableObject, it must be a class, not a structure.
+- different ways of persisting data: UserDefaults, PList, JSON file, Core Data
+- @AppStorage is a property wrapper, similar to @State and @Binding, that allows interaction between UserDefaults and your SwiftUI views
 
 
 ## Key Points

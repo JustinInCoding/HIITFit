@@ -34,7 +34,7 @@ struct ExerciseView: View {
 	@EnvironmentObject var historyStore: HistoryStore
 	@State private var showSuccess = false
 	@State private var showHistory = false
-	@State private var rating = 0
+	@AppStorage("rating") private var rating = 0
 	@Binding var selectedTab: Int
 	let index: Int
 	@State private var timerDone = false
