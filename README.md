@@ -85,6 +85,14 @@ struct xxx_Previews: PreviewProvider {
 - To be an @EnvironmentObject, it must conform to ObservableObject. An ObservableObject is a publisher. Also to conform to ObservableObject, it must be a class, not a structure.
 - different ways of persisting data: UserDefaults, PList, JSON file, Core Data
 - @AppStorage is a property wrapper, similar to @State and @Binding, that allows interaction between UserDefaults and your SwiftUI views
+- Inside your app sandbox are two sets of directories. First, you’ll examine the app bundle and then the user data.
+- If you have some default data included with your bundle that your user should be able to change, you would need to copy the bundle data to the user data directories when your user runs the app after first installation.
+- some significant directories defined by Apple [here](https://developer.apple.com/documentation/foundation/url)
+- URL.documentsDirectory: Documents/. The main documents directory for the app.
+- URL.libraryDirectory: Library/. The directory for files that you don’t want to expose to the user.
+- URL.cachesDirectory: Library/Caches/. Temporary cache files. You might use this if you expand a zipped file and temporarily access the contents in your app.
+- iPhone and iPad backups will save Documents and Library, excluding Library/Caches.
+- UserDefaults file locates in Library/Preferences 
 
 
 ## Key Points
