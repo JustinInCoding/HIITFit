@@ -63,12 +63,45 @@ class HistoryStore: ObservableObject {
 	}
 
 	func load() throws {
-
+		do {
+			// Read the data file into a byte buffer.
+			let data = try Data(contentsOf: dataURL)
+			// Convert the property list format into plistData
+			let plistData = try PropertyListSerialization.propertyList(
+				from: data,
+				options: [],
+				format: nil
+			)
+			// use the type cast operator as?
+			let convertedPlistData = plistData as? [[Any]] ?? []
+			// cast to the expected type
+			exerciseDays = convertedPlistData.map {
+				ExerciseDay(
+					date: $0[1] as? Date ?? Date(),
+					exercises: $0[2] as? [String] ?? []
+				)
+			}
+		} catch {
+			throw FileError.loadFailure
+		}
 	}
 
 	func save() throws {
 		let plistData = exerciseDays.map {
 			[$0.id.uuidString, $0.date, $0.exercises]
+		}
+		do {
+			// convert your history data to a serialized property list format. The result is a Data type, which is a buffer of bytes.
+			let data = try PropertyListSerialization.data(
+				fromPropertyList: plistData,
+				format: .binary,
+				options: .zero
+			)
+			// write to disk
+			try data.write(to: dataURL, options: .atomic)
+		} catch {
+			// catch by throwing an error
+			throw FileError.saveFailure
 		}
 	}
 
@@ -81,6 +114,11 @@ class HistoryStore: ObservableObject {
 				ExerciseDay(date: today, exercises: [exerciseName]),
 				at: 0
 			)
+		}
+		do {
+			try save()
+		} catch {
+			fatalError(error.localizedDescription)
 		}
 	}
 }

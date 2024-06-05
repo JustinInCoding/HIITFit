@@ -109,6 +109,8 @@ struct xxx_Previews: PreviewProvider {
 - Swift Tip: Optional is actually an enumeration with two cases: some(Wrapped) and none, where some has a generic value of type Wrapped and none has no value.
 - Note: When the test is a simple one, you can shorten the test and assignment from if let varName = varName {...} to if let varName {...}.
 - @State, being so transient, is incompatible with reference objects and, as HistoryStore is a class, @StateObject is the right choice here. @StateObject is a read-only property wrapper. You get one chance to initialize it, and you can’t change the property once you set it.
+- use the type cast operator as? when fetch the data from plist file and map it to some type
+- save and load historys by plist
 
 
 ## Key Points
