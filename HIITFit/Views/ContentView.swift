@@ -32,16 +32,16 @@ import SwiftUI
 
 struct ContentView: View {
 	@State private var selectedTab = 9
+	@State private var historyStore = HistoryStore()
 	var body: some View {
 		TabView(selection: $selectedTab) {
-			WelcomeView(selectedTab: $selectedTab)
+			WelcomeView(selectedTab: $selectedTab, historyStore: historyStore)
 				.tag(9)
 			ForEach(Exercise.exercises.indices, id: \.self) { index in
-				ExerciseView(selectedTab: $selectedTab, index: index)
+				ExerciseView(selectedTab: $selectedTab, historyStore: $historyStore, index: index)
 					.tag(index)
 			}
 		}
-		.environmentObject(HistoryStore())
 		.tabViewStyle(PageTabViewStyle())
 		.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
 	}

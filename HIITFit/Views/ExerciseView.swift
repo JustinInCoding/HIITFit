@@ -31,11 +31,11 @@
 import SwiftUI
 
 struct ExerciseView: View {
-	@EnvironmentObject var historyStore: HistoryStore
 	@State private var showSuccess = false
 	@State private var showHistory = false
 	@State private var rating = 0
 	@Binding var selectedTab: Int
+	@Binding var historyStore: HistoryStore
 	let index: Int
 	@State private var timerDone = false
 	@State private var showTimer = false
@@ -97,7 +97,7 @@ struct ExerciseView: View {
 					showHistory.toggle()
 				}
 				.sheet(isPresented: $showHistory, content: {
-					HistoryView(showHistory: $showHistory)
+					HistoryView(showHistory: $showHistory, historyStore: historyStore)
 				})
 					.padding(.bottom)
 			}
@@ -105,10 +105,10 @@ struct ExerciseView: View {
 	}
 }
 
-#Preview {
-	ExerciseView(selectedTab: .constant(3), index: 3)
-		.environmentObject(HistoryStore())
-}
+//#Preview {
+//	ExerciseView(selectedTab: .constant(3), index: 3)
+//}
+
 
 
 

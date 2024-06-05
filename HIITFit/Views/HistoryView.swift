@@ -32,7 +32,8 @@ import SwiftUI
 
 struct HistoryView: View {
 	@Binding var showHistory: Bool
-	@EnvironmentObject var historyStore: HistoryStore
+	// here you do not need to change it, so no need to use @Binding
+	let historyStore: HistoryStore
 
 	var body: some View {
 		ZStack(alignment: .topTrailing) {
@@ -65,7 +66,7 @@ struct HistoryView: View {
 	}
 }
 
-#Preview {
-	HistoryView(showHistory: .constant(true))
-		.environmentObject(HistoryStore())
-}
+//#Preview {
+//	HistoryView(showHistory: .constant(true))
+//}
+

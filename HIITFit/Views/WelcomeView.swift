@@ -33,6 +33,7 @@ import SwiftUI
 struct WelcomeView: View {
 	@State private var showHistory = false
 	@Binding var selectedTab: Int
+	let historyStore: HistoryStore
 	var body: some View {
 		ZStack {
 			VStack {
@@ -67,7 +68,7 @@ struct WelcomeView: View {
 					showHistory.toggle()
 				}
 				.sheet(isPresented: $showHistory, content: {
-					HistoryView(showHistory: $showHistory)
+					HistoryView(showHistory: $showHistory, historyStore: historyStore)
 				})
 				.padding(.bottom)
 			}
@@ -75,6 +76,6 @@ struct WelcomeView: View {
 	}
 }
 
-#Preview {
-	WelcomeView(selectedTab: .constant(9))
-}
+//#Preview {
+//	WelcomeView(selectedTab: .constant(9))
+//}
