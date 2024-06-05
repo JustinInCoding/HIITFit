@@ -31,13 +31,27 @@
 import SwiftUI
 
 struct RatingView: View {
-	@AppStorage("ratings") private var ratings: String = "4000"
+	@AppStorage("ratings") private var ratings: String = ""
 	@State private var rating = 0
 	let exerciseIndex: Int
 	let maximunRating = 5
 
 	let onColor = Color.red
 	let offColor = Color.gray
+
+	init(exerciseIndex: Int) {
+		self.exerciseIndex = exerciseIndex
+		// ratings must have as many characters as you have exercises
+		let desiredLength = Exercise.exercises.count
+		// If ratings is too short, then pad out the string with zeros
+		if ratings.count < desiredLength {
+			ratings = ratings.padding(
+				toLength: desiredLength,
+				withPad: "0",
+				startingAt: 0
+			)
+		}
+	}
 
 	func updateRating(index: Int) {
 		rating = index

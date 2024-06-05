@@ -17,6 +17,7 @@
 - use TimelineView instead of Text to implement the count down
 - use @environmentObject to avoid just passing through object to the next view/page
 - use @AppStorage to save rating
+- add initializer to the RatingView for preventing miss match the length of ratings and exercises's count
 
 
 ## Features
