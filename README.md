@@ -21,6 +21,7 @@
 - make app supports multiple windows then u can have the app with others or have two exercises together on iPad
 - use onChange again to make two windows' rating value sync.
 - use @SceneStorage to remeber the selected tab last time you left the app
+- use try...catch with error to handle the error may be caused by load from or save to a file 
 
 
 ## Features
