@@ -20,6 +20,7 @@
 - add initializer to the RatingView for preventing miss match the length of ratings and exercises's count
 - make app supports multiple windows then u can have the app with others or have two exercises together on iPad
 - use onChange again to make two windows' rating value sync.
+- use @SceneStorage to remeber the selected tab last time you left the app
 
 
 ## Features
@@ -100,6 +101,8 @@ struct xxx_Previews: PreviewProvider {
 - Note: You can do so much string manipulation that you’ll need [Use Your Loaf’s Swift String cheat sheet](https://useyourloaf.com/blog/swift-string-cheat-sheet/)
 - Note: You can find more information about RangeExpressions in the [official Apple documentation](https://developer.apple.com/documentation/swift/rangeexpression).
 - Locate Application Scene Manifest in the Custom iOS Target Properties, and open the disclosure indicator. Enable Multiple Windows has a value of YES
+- by using @SceneStorage, you can persist the current state of each scene of your app, @SceneStorage properties persist per scene.
+- To reset SceneStorage in Simulator, you will have to clear the cache. In Simulator, choose Device ▸ Erase All Content and Settings… and then re-run your app.
 
 
 ## Key Points

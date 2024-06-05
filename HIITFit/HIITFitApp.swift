@@ -31,8 +31,11 @@
 import SwiftUI
 
 @main
+// Conforms to App, which represents the entire app
 struct HIITFitApp: App {
 	var body: some Scene {
+		// Conforms to Scene. A WindowGroup presents one or more windows that all contain the same view hierarchy.
+		// WindowGroup behaves differently depending on the platform. On macOS and iPadOS, you can open more than one window or scene, but on iOS, tvOS and watchOS, you can only have the one window.
 		WindowGroup {
 			ContentView()
 		}
