@@ -30,83 +30,41 @@
 
 import SwiftUI
 
-struct ExerciseView: View {
-	@State private var showSuccess = false
-	@State private var showHistory = false
-	@State private var rating = 0
-	@Binding var selectedTab: Int
-	let index: Int
-	@State private var timerDone = false
-	@State private var showTimer = false
-	var exercise: Exercise {
-		Exercise.exercises[index]
-	}
-	var lastExercise: Bool {
-		index + 1 == Exercise.exercises.count
-	}
-
-	var startButton: some View {
-		Button("Start Exercise") {
-			showTimer.toggle()
-		}
-	}
-	var doneButton: some View {
-		Button("Done") {
-			timerDone = false
-			showTimer.toggle()
-			if lastExercise {
-				showSuccess.toggle()
-			} else {
-				selectedTab += 1
-			}
-		}
-
-	}
+struct CountDownView: View {
+	@Binding var timeRemaining: Int
+	let date: Date
+	let size: CGFloat
 	var body: some View {
-		GeometryReader { geometry in
-			// spacing 0 is for small phone like iPhone SE which will push the History button down a little bit or off the screen
-			VStack(spacing: 0) {
-				HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
-					.padding(.bottom)
-				VideoPlayerView(videoName: exercise.videoName)
-					.frame(height: geometry.size.height * 0.45)
+		Text("\(timeRemaining)")
+			.font(.system(size: size, design: .rounded))
+			.padding()
+			.onChange(of: date) { _, _ in
+				timeRemaining -= 1
+			}
+	}
+}
 
-				HStack(spacing: 150) {
-					startButton
-					doneButton
-						.disabled(!timerDone)
-						.sheet(isPresented: $showSuccess, content: {
-							SuccessView(selectedTab: $selectedTab)
-						})
-				}
-				.font(.title3)
-				.padding()
 
-				if showTimer {
-					TimerView(
-						timerDone: $timerDone,
-						size: geometry.size.height * 0.07
-					)
-				}
-				Spacer()
-				RatingView(rating: $rating)
-					.padding()
-				Button("History") {
-					showHistory.toggle()
-				}
-				.sheet(isPresented: $showHistory, content: {
-					HistoryView(showHistory: $showHistory)
-				})
-					.padding(.bottom)
+struct TimerView: View {
+	@State private var timeRemaining: Int = 3
+	@Binding var timerDone: Bool
+	let size: CGFloat
+
+	var body: some View {
+		TimelineView(.animation(minimumInterval: 1.0, paused: timeRemaining <= 0)) { context in
+			CountDownView(
+				timeRemaining: $timeRemaining,
+				date: context.date,
+				size: size)
+		}
+		.onChange(of: timeRemaining) { _, _ in
+			if timeRemaining < 1 {
+				timerDone = true
 			}
 		}
 	}
 }
 
 #Preview {
-	ExerciseView(selectedTab: .constant(3), index: 3)
+	TimerView(timerDone: .constant(false), size: 90)
 }
-
-
-
-
