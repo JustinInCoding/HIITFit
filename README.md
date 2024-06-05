@@ -168,6 +168,15 @@ To use a collection in a ForEach loop, it needs to have a way to uniquely identi
 - @Binding declares a dependency on a @State property owned by another view. @EnvironmentObject declares a dependency on some shared data, such as a reference type that conforms to ObservableObject.
 - Use an ObservableObject as an @EnvironmentObject to let subviews access data without having to pass parameters.
 
+- Optionals are properties that can contain nil. Optionals make your code more secure, as the compiler won’t allow you to assign nil to non-optional properties. You can use guard let to unwrap an optional or exit the current method if the optional contains nil.
+- Don’t force-unwrap optionals by marking them with an !. It is tempting to use an ! when assigning optionals to a new property because you think the property will never contain nil. Instead, try and keep your code safe by assigning a fall-back value with the nil coalescing operator ??.
+- Use breakpoints to halt execution and step through code to confirm that it’s working correctly and that variables contain the values you expect.
+- Use throw to throw errors in methods marked by throws.
+- If you need to handle errors, call methods marked by throws with do { try ... } catch { ... }. catch will only be performed if the try fails. If you don’t need to handle errors, you can call the method with let result = try? method(). result will contain nil if there is an error.
+- Use @StateObject to hold your data store. Your app will only initialize a state object once.
+- Closures are chunks of code that you can pass around just as you would any other object. You can assign them to variables or provide them as parameters to methods. Array has a number of methods requiring closures to transform its elements into a new array.
+- PropertyListSerialization is just one way of saving data to disk. You could also use JSON, or Core Data, which manages objects and their persistence.
+
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book
 - Original Repository of Kodeco [_here_](https://github.com/kodecocodes/suia-materials/tree/editions/2.0).

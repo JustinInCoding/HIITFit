@@ -63,9 +63,12 @@ class HistoryStore: ObservableObject {
 	}
 
 	func load() throws {
+		// Read the data file into a byte buffer. The first time open the app there's
+		// no file, so ignore it
+		guard let data = try? Data(contentsOf: dataURL) else {
+			return
+		}
 		do {
-			// Read the data file into a byte buffer.
-			let data = try Data(contentsOf: dataURL)
 			// Convert the property list format into plistData
 			let plistData = try PropertyListSerialization.propertyList(
 				from: data,
