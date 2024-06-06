@@ -67,8 +67,20 @@ struct ExerciseView: View {
 				selectedTab += 1
 			}
 		}
-
 	}
+
+	var historyButton: some View {
+		Button {
+			showHistory.toggle()
+		} label: {
+			Text("History")
+				.fontWeight(.bold)
+				.padding([.leading, .trailing], 5)
+		}
+			.padding([.bottom])
+			.buttonStyle(EmbossedButtonStyle())
+	}
+
 	var body: some View {
 		GeometryReader { geometry in
 			// spacing 0 is for small phone like iPhone SE which will push the History button down a little bit or off the screen
@@ -98,13 +110,10 @@ struct ExerciseView: View {
 				Spacer()
 				RatingView(exerciseIndex: index)
 					.padding()
-				Button("History") {
-					showHistory.toggle()
-				}
-				.sheet(isPresented: $showHistory, content: {
-					HistoryView(showHistory: $showHistory)
-				})
-					.padding(.bottom)
+				historyButton
+					.sheet(isPresented: $showHistory, content: {
+						HistoryView(showHistory: $showHistory)
+					})
 			}
 		}
 	}

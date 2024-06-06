@@ -41,6 +41,18 @@ struct WelcomeView: View {
 		.padding()
 	}
 
+	var historyButton: some View {
+		Button {
+			showHistory.toggle()
+		} label: {
+			Text("History")
+				.fontWeight(.bold)
+				.padding([.leading, .trailing], 5)
+		}
+		.padding(.bottom)
+		.buttonStyle(EmbossedButtonStyle())
+	}
+
 	var body: some View {
 		ZStack {
 			VStack {
@@ -60,13 +72,10 @@ struct WelcomeView: View {
 			VStack {
 				HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
 				Spacer()
-				Button("History") {
-					showHistory.toggle()
-				}
-				.sheet(isPresented: $showHistory, content: {
-					HistoryView(showHistory: $showHistory)
-				})
-				.padding(.bottom)
+				historyButton
+					.sheet(isPresented: $showHistory, content: {
+						HistoryView(showHistory: $showHistory)
+					})
 			}
 		}
 	}

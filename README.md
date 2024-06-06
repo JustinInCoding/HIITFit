@@ -25,6 +25,8 @@
 - use Alert to inform user loading file error
 - use map to transform exerciseDay to plistData
 - use custom button style with shadow to make a neumorphic button
+- use @ViewBuilder to fix the compiler error which expects some View to be one type of view
+
 
 
 ## Features
@@ -115,6 +117,8 @@ struct xxx_Previews: PreviewProvider {
 - abstract small piece of view and style
 - [a range of style protocols for you to customize](https://developer.apple.com/documentation/swiftui/view-styles)
 - If you want to customize how the button action triggers with gestures, you can use PrimitiveButtonStyle instead of ButtonStyle
+- Internally, @ViewBuilder takes in up to ten views and combines them into one TupleView. A tuple is a loosely formed type made up of several items. (for old api like 13.0)
+- @ViewBuilder has ten buildBlock(...) methods and, depending on how many contained views there are, calls the appropriate method. Have you ever tried to add more than ten views in a VStack? Because there are only ten methods for building up views in ViewBuilder, you’ll get a compile error: Extra argument in call. (for old api like 13.0)
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.

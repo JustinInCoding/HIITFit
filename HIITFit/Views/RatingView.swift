@@ -79,13 +79,16 @@ struct RatingView: View {
 	var body: some View {
 		HStack {
 			ForEach(1 ..< maximunRating + 1, id: \.self) { index in
-				Image(systemName: "waveform.path.ecg")
-					.foregroundColor(
-						index > rating ? offColor : onColor
-					)
-					.onTapGesture {
-						updateRating(index: index)
-					}
+				Button {
+					updateRating(index: index)
+				} label: {
+					Image(systemName: "waveform.path.ecg")
+						.foregroundColor(
+							index > rating ? offColor : onColor
+						)
+						.font(.body)
+				}
+					.buttonStyle(EmbossedButtonStyle(buttonShape: .round))
 					// app runs onAppear(perform:) every time the view appears
 					.onAppear() {
 						convertRating()

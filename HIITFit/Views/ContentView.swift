@@ -44,8 +44,7 @@ struct ContentView: View {
 		.onAppear() {
 			print(URL.documentsDirectory)
 		}
-		.tabViewStyle(PageTabViewStyle())
-		.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
+		.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 	}
 }
 
