@@ -28,7 +28,6 @@
 - use @ViewBuilder to fix the compiler error which expects some View to be one type of view
 
 
-
 ## Features
 - A Welcome screen with text, images and a button.
 - A title and page numbers are at the top of the Welcome screen and a History button is at the bottom. These are also on the screen with the exercise video. The page numbers indicate there are four numbered pages after this page. The waving hand symbol is highlighted.
@@ -119,6 +118,7 @@ struct xxx_Previews: PreviewProvider {
 - If you want to customize how the button action triggers with gestures, you can use PrimitiveButtonStyle instead of ButtonStyle
 - Internally, @ViewBuilder takes in up to ten views and combines them into one TupleView. A tuple is a loosely formed type made up of several items. (for old api like 13.0)
 - @ViewBuilder has ten buildBlock(...) methods and, depending on how many contained views there are, calls the appropriate method. Have you ever tried to add more than ten views in a VStack? Because there are only ten methods for building up views in ViewBuilder, you’ll get a compile error: Extra argument in call. (for old api like 13.0)
+- use @ViewBuilder to create custom Container View with styles background
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.

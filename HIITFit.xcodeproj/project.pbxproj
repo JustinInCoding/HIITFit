@@ -11,6 +11,7 @@
 		983E89C32C114A8300752F22 /* WelcomeImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C22C114A8300752F22 /* WelcomeImages.swift */; };
 		983E89C52C1151CD00752F22 /* RaisedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C42C1151CD00752F22 /* RaisedButton.swift */; };
 		983E89C72C1160AC00752F22 /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C62C1160AC00752F22 /* EmbossedButton.swift */; };
+		983E89C92C11762900752F22 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C82C11762900752F22 /* ContainerView.swift */; };
 		98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */; };
 		98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8F2C0DC1C2007C6B3F /* ContentView.swift */; };
 		98698A922C0DC1C4007C6B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98698A912C0DC1C4007C6B3F /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		983E89C22C114A8300752F22 /* WelcomeImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeImages.swift; sourceTree = "<group>"; };
 		983E89C42C1151CD00752F22 /* RaisedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaisedButton.swift; sourceTree = "<group>"; };
 		983E89C62C1160AC00752F22 /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
+		983E89C82C11762900752F22 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		98698A8A2C0DC1C2007C6B3F /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		98698A8F2C0DC1C2007C6B3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				983E89C22C114A8300752F22 /* WelcomeImages.swift */,
 				983E89C42C1151CD00752F22 /* RaisedButton.swift */,
 				983E89C62C1160AC00752F22 /* EmbossedButton.swift */,
+				983E89C82C11762900752F22 /* ContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				983E89C52C1151CD00752F22 /* RaisedButton.swift in Sources */,
 				98698A9E2C0DC2FF007C6B3F /* DateExtension.swift in Sources */,
 				98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */,
+				983E89C92C11762900752F22 /* ContainerView.swift in Sources */,
 				98D7093B2C0EE7FB00F60FEC /* Exercise.swift in Sources */,
 				98698AA02C0DCAC2007C6B3F /* ImageExtension.swift in Sources */,
 				98D7092A2C0EA97700F60FEC /* HeaderView.swift in Sources */,
