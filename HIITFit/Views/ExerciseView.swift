@@ -32,22 +32,27 @@ import SwiftUI
 
 struct ExerciseView: View {
 	@EnvironmentObject var historyStore: HistoryStore
+	
 	@State private var showSuccess = false
 	@State private var showHistory = false
 	@AppStorage("rating") private var rating = 0
 	@Binding var selectedTab: Int
+	
 	let index: Int
+
 	@State private var timerDone = false
 	@State private var showTimer = false
+
 	var exercise: Exercise {
 		Exercise.exercises[index]
 	}
+
 	var lastExercise: Bool {
 		index + 1 == Exercise.exercises.count
 	}
 
 	var startButton: some View {
-		Button("Start Exercise") {
+		RaisedButton(buttonText: "Start Exercise") {
 			showTimer.toggle()
 		}
 	}

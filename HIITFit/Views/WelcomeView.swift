@@ -33,6 +33,14 @@ import SwiftUI
 struct WelcomeView: View {
 	@State private var showHistory = false
 	@Binding var selectedTab: Int
+
+	var getStartButton: some View {
+		RaisedButton(buttonText: "Get Started") {
+			selectedTab = 0
+		}
+		.padding()
+	}
+
 	var body: some View {
 		ZStack {
 			VStack {
@@ -47,18 +55,7 @@ struct WelcomeView: View {
 						.resizedToFill(width: 240, height: 240)
 						.clipShape(Circle())
 				}
-				Button {
-					selectedTab = 0
-				} label: {
-					Text("Get Started")
-					Image(systemName: "arrow.right.circle")
-				}
-				.font(.title2)
-				.padding()
-				.background(
-					RoundedRectangle(cornerRadius: 20.0)
-						.strokeBorder(Color.gray, lineWidth: 2.0)
-				)
+				getStartButton
 			}
 			VStack {
 				HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
