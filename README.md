@@ -121,6 +121,7 @@ struct xxx_Previews: PreviewProvider {
 - use @ViewBuilder to create custom Container View with styles background
 - use `fixedSize(horizontal: , vertical: )` fits the text in different size devices
 - use `ViewThatFits` to fit the screen, always try the first but when the space is tight, it'll turn to the alternative one
+- use LinearGradient to add gradient background on app
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.
