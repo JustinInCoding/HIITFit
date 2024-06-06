@@ -51,12 +51,8 @@ struct HistoryView: View {
 	}
 
 	func dayView(day: ExerciseDay) -> some View {
-		Section(
-			header: Text(day.date.formatted(as: "MMM d"))
-				.font(.headline)
-		) {
-			exerciseView(day: day)
-		}
+		Text(day.date.formatted(as: "d MMM YYYY"))
+			.font(.headline)
 	}
 
 	func exerciseView(day: ExerciseDay) -> some View {
@@ -70,11 +66,12 @@ struct HistoryView: View {
 		VStack {
 			headerView
 				.padding()
-			Form {
-				ForEach(historyStore.exerciseDays) { day in
-					dayView(day: day)
-				}
+			List($historyStore.exerciseDays, editActions: [.delete]) { $day in
+				dayView(day: day)
 			}
+		}
+		.onDisappear{
+			try? historyStore.save()
 		}
 	}
 }

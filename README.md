@@ -124,6 +124,9 @@ struct xxx_Previews: PreviewProvider {
 - use LinearGradient to add gradient background on app
 - if you come up with the error messages: ForEach<Array, String, Text>: the ID Burpee occurs multiple times within the collection, this will give undefined results!, means ForEach requires each item to be uniquely identifiable
 - use `set` to make a collection be unique
+- use badge modifier to provide supplementary on a list item
+- use List to add deleting feature instead of Form with Section, save the data when view disappear
+- TODO: leaves the app by swiping up from the bottom, the app may be closed by the system without saving the data, how to fix this
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.
