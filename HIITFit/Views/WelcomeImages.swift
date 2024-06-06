@@ -68,10 +68,12 @@ extension WelcomeView {
 					.font(.largeTitle)
 					.fontWeight(.black)
 					.kerning(2)
-				Text("with high intensity interval training")
+				Text("by exercising at home")
 					.font(.headline)
 					.fontWeight(.medium)
 					.kerning(2)
+				// make the text fits horizontally, and ask SwiftUI to fix an ideal vertical size
+					.fixedSize(horizontal: false, vertical: true)
 			}
 		}
 	}

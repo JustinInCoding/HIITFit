@@ -119,6 +119,8 @@ struct xxx_Previews: PreviewProvider {
 - Internally, @ViewBuilder takes in up to ten views and combines them into one TupleView. A tuple is a loosely formed type made up of several items. (for old api like 13.0)
 - @ViewBuilder has ten buildBlock(...) methods and, depending on how many contained views there are, calls the appropriate method. Have you ever tried to add more than ten views in a VStack? Because there are only ten methods for building up views in ViewBuilder, you’ll get a compile error: Extra argument in call. (for old api like 13.0)
 - use @ViewBuilder to create custom Container View with styles background
+- use `fixedSize(horizontal: , vertical: )` fits the text in different size devices
+- use `ViewThatFits` to fit the screen, always try the first but when the space is tight, it'll turn to the alternative one
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.

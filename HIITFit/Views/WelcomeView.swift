@@ -54,29 +54,35 @@ struct WelcomeView: View {
 	}
 
 	var body: some View {
-		ZStack {
+		GeometryReader { geometry in
 			VStack {
-				HStack(alignment: .bottom) {
-					VStack(alignment: .leading) {
-						Text("Get fit")
-							.font(.largeTitle)
-						Text("with high intensity interval training")
-							.font(.headline)
-					}
-					Image("step-up")
-						.resizedToFill(width: 240, height: 240)
-						.clipShape(Circle())
-				}
-				getStartButton
-			}
-			VStack {
-				HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
+				HeaderView(
+					selectedTab: $selectedTab,
+					titleText: "Welcome"
+				)
 				Spacer()
-				historyButton
-					.sheet(isPresented: $showHistory, content: {
-						HistoryView(showHistory: $showHistory)
-					})
+				ContainerView {
+					ViewThatFits {
+						VStack {
+							WelcomeView.images
+							WelcomeView.welcomeText
+							getStartButton
+							Spacer()
+							historyButton
+						}
+						VStack {
+							WelcomeView.welcomeText
+							getStartButton
+							Spacer()
+							historyButton
+						}
+					}
+				}
+				.frame(height: geometry.size.height * 0.8)
 			}
+			.sheet(isPresented: $showHistory, content: {
+				HistoryView(showHistory: $showHistory)
+			})
 		}
 	}
 }
