@@ -122,6 +122,8 @@ struct xxx_Previews: PreviewProvider {
 - use `fixedSize(horizontal: , vertical: )` fits the text in different size devices
 - use `ViewThatFits` to fit the screen, always try the first but when the space is tight, it'll turn to the alternative one
 - use LinearGradient to add gradient background on app
+- if you come up with the error messages: ForEach<Array, String, Text>: the ID Burpee occurs multiple times within the collection, this will give undefined results!, means ForEach requires each item to be uniquely identifiable
+- use `set` to make a collection be unique
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.

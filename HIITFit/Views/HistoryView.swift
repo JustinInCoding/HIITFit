@@ -60,8 +60,9 @@ struct HistoryView: View {
 	}
 
 	func exerciseView(day: ExerciseDay) -> some View {
-		ForEach(day.exercises, id: \.self) { exercise in
+		ForEach(day.uniqueExercises, id: \.self) { exercise in
 			Text(exercise)
+				.badge(day.countExercise(exercise: exercise))
 		}
 	}
 
