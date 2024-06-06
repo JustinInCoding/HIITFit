@@ -187,6 +187,13 @@ To use a collection in a ForEach loop, it needs to have a way to uniquely identi
 - Closures are chunks of code that you can pass around just as you would any other object. You can assign them to variables or provide them as parameters to methods. Array has a number of methods requiring closures to transform its elements into a new array.
 - PropertyListSerialization is just one way of saving data to disk. You could also use JSON, or Core Data, which manages objects and their persistence.
 
+- It’s not always possible to spend money on hiring a designer, but you should definitely spend time making your app as attractive and friendly as possible. Try various designs out and offer them to your testers for their opinions.
+- Neumorphism is a simple style that works well. Keep up with designer trends at https://dribbble.com.
+- Style protocols allow you to customize various view types to fit in with your desired design.
+- Using @ViewBuilder, you can return varying types of views from methods and properties. It’s easy to create custom container views that have added styling or functionality.
+- You can layer background colors in the safe area, but don’t place any of your user interface there.
+- Gradients are an easy way to create a stand-out design. You can find interesting gradients at https://uigradients.com.
+
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book
 - Original Repository of Kodeco [_here_](https://github.com/kodecocodes/suia-materials/tree/editions/2.0).
