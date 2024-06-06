@@ -13,6 +13,7 @@
 		983E89C72C1160AC00752F22 /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C62C1160AC00752F22 /* EmbossedButton.swift */; };
 		983E89C92C11762900752F22 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C82C11762900752F22 /* ContainerView.swift */; };
 		983E89CB2C117D9D00752F22 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89CA2C117D9D00752F22 /* GradientBackground.swift */; };
+		983E89CD2C11A84A00752F22 /* history.plist in Resources */ = {isa = PBXBuildFile; fileRef = 983E89CC2C11A84A00752F22 /* history.plist */; };
 		98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */; };
 		98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8F2C0DC1C2007C6B3F /* ContentView.swift */; };
 		98698A922C0DC1C4007C6B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98698A912C0DC1C4007C6B3F /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		983E89C62C1160AC00752F22 /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
 		983E89C82C11762900752F22 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		983E89CA2C117D9D00752F22 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		983E89CC2C11A84A00752F22 /* history.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = history.plist; sourceTree = "<group>"; };
 		98698A8A2C0DC1C2007C6B3F /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		98698A8F2C0DC1C2007C6B3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		98698A932C0DC1C4007C6B3F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				983E89CC2C11A84A00752F22 /* history.plist */,
 				98698A942C0DC1C4007C6B3F /* Preview Assets.xcassets */,
 				98D7093C2C0EEA8500F60FEC /* HistoryStoreDevData.swift */,
 			);
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98D7092D2C0EBA1100F60FEC /* burpee.mp4 in Resources */,
+				983E89CD2C11A84A00752F22 /* history.plist in Resources */,
 				98D7092E2C0EBA1100F60FEC /* squat.mp4 in Resources */,
 				98D7092F2C0EBA1100F60FEC /* step-up.mp4 in Resources */,
 				98D709302C0EBA1100F60FEC /* sun-salute.mp4 in Resources */,

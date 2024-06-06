@@ -50,16 +50,21 @@ class HistoryStore: ObservableObject {
 			.appendingPathComponent("history.plist")
 	}
 
-	init() {
-//		#if DEBUG
-//		createDevData()
-//		#endif
-
+	init(preview: Bool = false) {
 		do {
 			try load()
 		} catch {
 			loadingError = true
 		}
+		#if DEBUG
+		if preview {
+			createDevData()
+		} else {
+			// copies a sample history.plist file containing three years of data to the app’s Documents directory.
+			copyHistoryTestData()
+			try? load()
+		}
+		#endif
 	}
 
 	func load() throws {

@@ -34,8 +34,12 @@ struct HistoryView: View {
 	@Binding var showHistory: Bool
 	@EnvironmentObject var historyStore: HistoryStore
 
-	var body: some View {
-		ZStack(alignment: .topTrailing) {
+	var headerView: some View {
+		HStack {
+			Spacer()
+			Text("History")
+				.font(.title)
+			Spacer()
 			Button {
 				showHistory.toggle()
 			} label: {
@@ -43,22 +47,31 @@ struct HistoryView: View {
 					.font(.title)
 					.padding()
 			}
+		}
+	}
 
-			VStack {
-				Text("History")
-					.font(.title)
+	func dayView(day: ExerciseDay) -> some View {
+		Section(
+			header: Text(day.date.formatted(as: "MMM d"))
+				.font(.headline)
+		) {
+			exerciseView(day: day)
+		}
+	}
+
+	func exerciseView(day: ExerciseDay) -> some View {
+		ForEach(day.exercises, id: \.self) { exercise in
+			Text(exercise)
+		}
+	}
+
+	var body: some View {
+		VStack {
+			headerView
 				.padding()
-				Form {
-					ForEach(historyStore.exerciseDays) { day in
-						Section(
-							header: Text(day.date.formatted(as: "MMM d"))
-								.font(.headline)
-						) {
-							ForEach(day.exercises, id: \.self) { exercise in
-								Text(exercise)
-							}
-						}
-					}
+			Form {
+				ForEach(historyStore.exerciseDays) { day in
+					dayView(day: day)
 				}
 			}
 		}

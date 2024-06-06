@@ -50,4 +50,21 @@ extension HistoryStore {
 			)
 		]
 	}
+
+	// copy history.plist to Documents directory
+	func copyHistoryTestData() {
+		let fileName = "history.plist"
+		if let resourceURL = Bundle.main.resourceURL {
+			let sourceURL = resourceURL.appendingPathComponent(fileName)
+			let documentsURL = URL.documentsDirectory
+			let destinationURL = documentsURL.appendingPathComponent(fileName)
+			do {
+				try FileManager.default.copyItem(at: sourceURL, to: destinationURL)
+			} catch {
+				print("Failed to copy", fileName)
+			}
+			print("Sample History data copied to Documents directory")
+		}
+	}
+
 }
