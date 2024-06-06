@@ -111,7 +111,7 @@ struct xxx_Previews: PreviewProvider {
 - @State, being so transient, is incompatible with reference objects and, as HistoryStore is a class, @StateObject is the right choice here. @StateObject is a read-only property wrapper. You get one chance to initialize it, and you can’t change the property once you set it.
 - use the type cast operator as? when fetch the data from plist file and map it to some type
 - save and load historys by plist
-
+- abstract small piece of view and style
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.

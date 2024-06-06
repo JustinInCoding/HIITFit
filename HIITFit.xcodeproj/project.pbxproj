@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9806E0932C0FEA7A0073930C /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9806E0922C0FEA7A0073930C /* TimerView.swift */; };
 		983E89C32C114A8300752F22 /* WelcomeImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C22C114A8300752F22 /* WelcomeImages.swift */; };
+		983E89C52C1151CD00752F22 /* RaisedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C42C1151CD00752F22 /* RaisedButton.swift */; };
 		98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */; };
 		98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8F2C0DC1C2007C6B3F /* ContentView.swift */; };
 		98698A922C0DC1C4007C6B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98698A912C0DC1C4007C6B3F /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		9806E0922C0FEA7A0073930C /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		983E89C22C114A8300752F22 /* WelcomeImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeImages.swift; sourceTree = "<group>"; };
+		983E89C42C1151CD00752F22 /* RaisedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaisedButton.swift; sourceTree = "<group>"; };
 		98698A8A2C0DC1C2007C6B3F /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		98698A8F2C0DC1C2007C6B3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				98D7093E2C0EF81200F60FEC /* SuccessView.swift */,
 				9806E0922C0FEA7A0073930C /* TimerView.swift */,
 				983E89C22C114A8300752F22 /* WelcomeImages.swift */,
+				983E89C42C1151CD00752F22 /* RaisedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */,
 				98D7093F2C0EF81200F60FEC /* SuccessView.swift in Sources */,
 				98D709362C0ED86000F60FEC /* HistoryView.swift in Sources */,
+				983E89C52C1151CD00752F22 /* RaisedButton.swift in Sources */,
 				98698A9E2C0DC2FF007C6B3F /* DateExtension.swift in Sources */,
 				98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */,
 				98D7093B2C0EE7FB00F60FEC /* Exercise.swift in Sources */,
