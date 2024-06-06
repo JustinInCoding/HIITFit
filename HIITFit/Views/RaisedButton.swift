@@ -46,11 +46,53 @@ struct RaisedButton_Previews: PreviewProvider {
 		ZStack {
 			RaisedButton()
 				.padding(20)
+				.buttonStyle(.raised)
 		}
 		.background(Color("background"))
 		.previewLayout(.sizeThatFits)
 	}
 }
+
+// customize buttons by setting up a structure that conforms to ButtonStyle
+struct RaisedButtonStyle: ButtonStyle {
+	// ButtonStyle has one required method: makeBody(configuration:)
+	func makeBody(configuration: Configuration) -> some View {
+		configuration.label
+			.frame(maxWidth: .infinity)
+			.padding([.top, .bottom], 12)
+			.background(
+				Capsule()
+					.foregroundColor(Color("background"))
+					.shadow(color: Color("drop-shadow"), radius: 4, x: 6, y: 6)
+					.shadow(color: Color("drop-highlight"), radius: 4, x: -6, y: -6)
+			)
+	}
+}
+
+// makes using the button style more Swift-y.
+// Instead of adding a button style: buttonStyle(RaisedButtonStyle()),
+// you can instead use: buttonStyle(.raised).
+extension ButtonStyle where Self == RaisedButtonStyle {
+	static var raised: RaisedButtonStyle {
+		.init()
+	}
+}
+
+// just play around for a while
+//struct triggeredButtonStyle: PrimitiveButtonStyle {
+//	func makeBody(configuration: Configuration) -> some View {
+//		configuration.label
+//			.onTapGesture {
+//				configuration.trigger()
+//			}
+//			.font(
+//				configuration.role == .cancel ? .title2.bold() : .title2
+//			)
+//			.foregroundColor(
+//				configuration.role == .destructive ? Color.red : nil
+//			)
+//	}
+//}
 
 extension Text {
 	func raisedButtonTextStyle() -> some View {

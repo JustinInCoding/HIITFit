@@ -24,6 +24,7 @@
 - use try...catch with error to handle the error may be caused by load from or save to a file
 - use Alert to inform user loading file error
 - use map to transform exerciseDay to plistData
+- use custom button style with shadow to make a neumorphic button
 
 
 ## Features
@@ -112,6 +113,8 @@ struct xxx_Previews: PreviewProvider {
 - use the type cast operator as? when fetch the data from plist file and map it to some type
 - save and load historys by plist
 - abstract small piece of view and style
+- [a range of style protocols for you to customize](https://developer.apple.com/documentation/swiftui/view-styles)
+- If you want to customize how the button action triggers with gestures, you can use PrimitiveButtonStyle instead of ButtonStyle
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.
