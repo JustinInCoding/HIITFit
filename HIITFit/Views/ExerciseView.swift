@@ -87,33 +87,41 @@ struct ExerciseView: View {
 			VStack(spacing: 0) {
 				HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
 					.padding(.bottom)
-				VideoPlayerView(videoName: exercise.videoName)
-					.frame(height: geometry.size.height * 0.45)
-
-				HStack(spacing: 150) {
-					startButton
-					doneButton
-						.disabled(!timerDone)
-						.sheet(isPresented: $showSuccess, content: {
-							SuccessView(selectedTab: $selectedTab)
-						})
-				}
-				.font(.title3)
-				.padding()
-
-				if showTimer {
-					TimerView(
-						timerDone: $timerDone,
-						size: geometry.size.height * 0.07
-					)
-				}
 				Spacer()
-				RatingView(exerciseIndex: index)
-					.padding()
-				historyButton
-					.sheet(isPresented: $showHistory, content: {
-						HistoryView(showHistory: $showHistory)
-					})
+				ContainerView {
+					VStack{
+						VideoPlayerView(videoName: exercise.videoName)
+							.frame(height: geometry.size.height * 0.35)
+							.padding(20)
+
+						HStack(spacing: 150) {
+							startButton
+							doneButton
+								.disabled(!timerDone)
+								.sheet(isPresented: $showSuccess, content: {
+									SuccessView(selectedTab: $selectedTab)
+								})
+						}
+						.font(.title3)
+						.padding()
+
+						if showTimer {
+							TimerView(
+								timerDone: $timerDone,
+								size: geometry.size.height * 0.07
+							)
+						}
+						Spacer()
+						RatingView(exerciseIndex: index)
+							.padding()
+						historyButton
+							.sheet(isPresented: $showHistory, content: {
+								HistoryView(showHistory: $showHistory)
+							})
+							.padding(.bottom)
+					}
+				}
+				.frame(height: geometry.size.height * 0.8)
 			}
 		}
 	}

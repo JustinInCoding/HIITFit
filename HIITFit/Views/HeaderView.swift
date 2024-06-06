@@ -33,27 +33,46 @@ import SwiftUI
 struct HeaderView: View {
 	@Binding var selectedTab: Int
 	let titleText: String
-	var body: some View {
-		VStack {
-			Text(titleText)
-				.font(.largeTitle)
-			HStack {
-				ForEach(Exercise.exercises.indices, id: \.self) { index in
-					let fill = index == selectedTab ? ".fill" : ""
-					Image(systemName: "\(index + 1).circle\(fill)")
-						.onTapGesture {
-							selectedTab = index
-						}
-				}
-			}
-			.font(.title2)
+
+	func dot(selected: Bool) -> some View {
+		ZStack {
+			Circle()
+				.foregroundColor(Color.white)
+				.frame(width: 32, height: 32)
+				.opacity(selected ? 0.5 : 0)
+			Circle()
+				.foregroundColor(Color.white)
+				.frame(width: 16, height: 16)
 		}
 	}
+
+	var body: some View {
+		ZStack {
+			VStack {
+				Text(titleText)
+					.fontWeight(.black)
+					.font(.largeTitle)
+					.foregroundColor(.white)
+				HStack() {
+					ForEach(Exercise.exercises.indices, id: \.self) { index in
+						dot(selected: index == selectedTab)
+							.onTapGesture {
+								selectedTab = index
+							}
+					}
+				}
+				.font(.title2)
+			}
+		}
+	}
+
+
 }
 
 struct HeaderView_Previews: PreviewProvider {
 	static var previews: some View {
 		HeaderView(selectedTab: .constant(0), titleText: "Squat")
+			.background(Color.black)
 			.previewLayout(.sizeThatFits)
 	}
 }

@@ -35,6 +35,7 @@ struct ContentView: View {
 	var body: some View {
 		ZStack {
 			GradientBackground()
+				.ignoresSafeArea()
 			TabView(selection: $selectedTab) {
 				WelcomeView(selectedTab: $selectedTab)
 					.tag(9)
