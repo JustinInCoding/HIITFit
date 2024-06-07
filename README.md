@@ -29,7 +29,7 @@
 - use `DisclosureGroup` to display Hierarchical Data
 - add `EditButton()` to place the whole list in editing mode so you can delete multiple rows
 - add `DatePicker()` to add Node to the History
-
+- use Swift Charts to display the trend or statistics of the exercises data
 
 ## Features
 - A Welcome screen with text, images and a button.

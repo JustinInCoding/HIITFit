@@ -15,6 +15,7 @@
 		983E89CB2C117D9D00752F22 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89CA2C117D9D00752F22 /* GradientBackground.swift */; };
 		983E89CD2C11A84A00752F22 /* history.plist in Resources */ = {isa = PBXBuildFile; fileRef = 983E89CC2C11A84A00752F22 /* history.plist */; };
 		983E89D02C12988800752F22 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89CF2C12988800752F22 /* AddHistoryView.swift */; };
+		983E89D22C12ABA000752F22 /* BarChartDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89D12C12ABA000752F22 /* BarChartDayView.swift */; };
 		98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */; };
 		98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8F2C0DC1C2007C6B3F /* ContentView.swift */; };
 		98698A922C0DC1C4007C6B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98698A912C0DC1C4007C6B3F /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		983E89CA2C117D9D00752F22 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		983E89CC2C11A84A00752F22 /* history.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = history.plist; sourceTree = "<group>"; };
 		983E89CF2C12988800752F22 /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
+		983E89D12C12ABA000752F22 /* BarChartDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartDayView.swift; sourceTree = "<group>"; };
 		98698A8A2C0DC1C2007C6B3F /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		98698A8F2C0DC1C2007C6B3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				98D709352C0ED86000F60FEC /* HistoryView.swift */,
 				983E89CF2C12988800752F22 /* AddHistoryView.swift */,
+				983E89D12C12ABA000752F22 /* BarChartDayView.swift */,
 			);
 			path = HistoryViews;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				98698A9E2C0DC2FF007C6B3F /* DateExtension.swift in Sources */,
 				98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */,
 				983E89C92C11762900752F22 /* ContainerView.swift in Sources */,
+				983E89D22C12ABA000752F22 /* BarChartDayView.swift in Sources */,
 				98D7093B2C0EE7FB00F60FEC /* Exercise.swift in Sources */,
 				98698AA02C0DCAC2007C6B3F /* ImageExtension.swift in Sources */,
 				98D7092A2C0EA97700F60FEC /* HeaderView.swift in Sources */,

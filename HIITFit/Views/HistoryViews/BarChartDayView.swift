@@ -28,33 +28,36 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
+import SwiftUI
+import Charts
 
-struct Exercise {
-	let exerciseName: String
-	let videoName: String
+struct BarChartDayView: View {
+	let day: ExerciseDay
 
-	enum ExerciseEnum: String {
-		case squat = "Squat"
-		case stepUp = "Step Up"
-		case burpee = "Burpee"
-		case sunSalute = "Sun Salute"
+	var body: some View {
+		// Declare that you are creating a Swift Chart.
+		Chart {
+			ForEach(Exercise.names, id: \.self) { name in
+				// Inside the chart, determine what sort of mark to use. This chart will be a bar chart, but it could also be an area, line or point chart.
+				BarMark(
+					// On the x-axis, you create a plottable value with a label and a string value.
+					x: .value(name, name),
+					// Similarly, on the y-axis, you create a plottable value with a label and an integer value.
+					y: .value("Total count", day.countExercise(exercise: name))
+				)
+				.foregroundStyle(Color("history-bar"))
+			}
+			// add a rule mark to show that you should perform at least one of the exercises per day.
+			RuleMark(y: .value("Exercise", 1))
+				.foregroundStyle(.red)
+		}
 	}
 }
 
-extension Exercise {
-	static let exercises = [
-		Exercise(exerciseName: ExerciseEnum.squat.rawValue, videoName: "squat"),
-		Exercise(exerciseName: ExerciseEnum.stepUp.rawValue, videoName: "step-up"),
-		Exercise(exerciseName: ExerciseEnum.burpee.rawValue, videoName: "burpee"),
-		Exercise(exerciseName: ExerciseEnum.sunSalute.rawValue, videoName: "sun-salute"),
-	]
-
-	static let names: [String] = [
-		ExerciseEnum.squat.rawValue,
-		ExerciseEnum.stepUp.rawValue,
-		ExerciseEnum.burpee.rawValue,
-		ExerciseEnum.sunSalute.rawValue
-	]
-
+struct BarCharDayView_Previews: PreviewProvider {
+	static var historyStore = HistoryStore(preview: true)
+	static var previews: some View {
+		BarChartDayView(day: historyStore.exerciseDays[0])
+			.environmentObject(historyStore)
+	}
 }
