@@ -44,6 +44,7 @@ struct AddHistoryView: View {
 					let exerciseName = Exercise.exercises[index].exerciseName
 					Button(exerciseName) {
 						// save the exercise
+						historyStore.addExercise(date: date, exerciseName: exerciseName)
 					}
 				}
 			}
@@ -81,5 +82,6 @@ struct AddHistoryView: View {
 struct AddHistoryView_Previews: PreviewProvider {
 	static var previews: some View {
 		AddHistoryView(addNode: .constant(true))
+			.environmentObject(HistoryStore(preview: true))
 	}
 }

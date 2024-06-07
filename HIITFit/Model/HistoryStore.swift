@@ -137,4 +137,29 @@ class HistoryStore: ObservableObject {
 			fatalError(error.localizedDescription)
 		}
 	}
+
+	func addExercise(date: Date, exerciseName: String) {
+		let exerciseDay = ExerciseDay(date: date, exercises: [exerciseName])
+		// find the first index in the exerciseDays array
+		// where the date is less than or equal to the passed-in date.
+		if let index = exerciseDays.firstIndex(
+			where: { $0.date.yearMonthDay <= date.yearMonthDay }) {
+			// If you find a date in the array that’s the same as the passed-in date,
+			// you append the exercise name to the already existing array element.
+			if date.isSameDay(as: exerciseDays[index].date) {
+				exerciseDays[index].exercises.append(exerciseName)
+			} else {
+				// If the date doesn’t already exist in the array,
+				// then insert it at the appropriate position.
+				exerciseDays.insert(exerciseDay, at: index)
+			}
+		} else {
+			// If the date is earlier than all the dates in the array,
+			// or the array is empty,
+			// then append the date to the array.
+			exerciseDays.append(exerciseDay)
+		}
+		// Save the history data.
+		try? save()
+	}
 }
