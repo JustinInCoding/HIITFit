@@ -36,6 +36,7 @@ struct HistoryView: View {
 
 	var headerView: some View {
 		HStack {
+			EditButton()
 			Spacer()
 			Text("History")
 				.font(.title)
