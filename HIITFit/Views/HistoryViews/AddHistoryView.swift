@@ -34,6 +34,23 @@ struct AddHistoryView: View {
 	@Binding var addNode: Bool
 	@State private var exerciseDate = Date()
 
+	struct ButtonsView: View {
+		@EnvironmentObject var historyStore: HistoryStore
+		@Binding var date: Date
+
+		var body: some View {
+			HStack {
+				ForEach(Exercise.exercises.indices, id: \.self) { index in
+					let exerciseName = Exercise.exercises[index].exerciseName
+					Button(exerciseName) {
+						// save the exercise
+					}
+				}
+			}
+			.buttonStyle(EmbossedButtonStyle())
+		}
+	}
+
 	var body: some View {
 		VStack {
 			ZStack {
@@ -44,6 +61,7 @@ struct AddHistoryView: View {
 				}
 				.frame(maxWidth: .infinity, alignment: .trailing)
 			}
+			ButtonsView(date: $exerciseDate)
 			DatePicker(
 				// The label of the control. This may not display, depending on the style of the date picker.
 				"Choose Date",

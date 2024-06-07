@@ -86,6 +86,7 @@ struct HistoryView: View {
 				}
 			}
 				.padding()
+			
 			List($historyStore.exerciseDays, editActions: [.delete]) { $day in
 				dayView(day: day)
 			}
