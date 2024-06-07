@@ -45,6 +45,8 @@
 - Tapping Done on the last exercise shows the High Five! screen.
 - Nice to have: Tapping a page number goes to that page. Tapping Done on an Exercise page goes to the next Exercise page. Dismissing the High Five! screen returns to the Welcome page.
 
+- be able to delete the date with all the exercises, but won't be able to delete a single exercise
+
 
 ## Screenshots/Design
 - [HIG-Foundations-Typography-Specifications](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications)
@@ -129,6 +131,7 @@ struct xxx_Previews: PreviewProvider {
 - use List to add deleting feature instead of Form with Section, save the data when view disappear
 - TODO: leaves the app by swiping up from the bottom, the app may be closed by the system without saving the data, how to fix this
 - Note: If you have truly hierarchical data, such as a structure Parent containing a property children: [Parent], where children is an array of the same type as Parent, you can take advantage of SwiftUI’s automatic disclosure by initializing the list with the format List(parents, children: \.children) { parent in ... }. The list will automatically list all parents, with disclosure groups for the children.
+- Note: You can of course do anything with your data in Swift. If you had the requirement of deleting a single exercise, you might set up your data differently, so that the top level of a list would be by exercise, rather than by date. Alternatively, instead of using the built in editActions of a list, you can use the onDelete(perform:) modifier for deletion and write the deletion code yourself.
 
 
 ## Key Points

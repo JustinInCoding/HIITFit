@@ -53,6 +53,7 @@ struct HistoryView: View {
 	func dayView(day: ExerciseDay) -> some View {
 		DisclosureGroup {
 			exerciseView(day: day)
+				.deleteDisabled(true)
 		} label: {
 			Text(day.date.formatted(as: "d MMM YYYY"))
 				.font(.headline)
