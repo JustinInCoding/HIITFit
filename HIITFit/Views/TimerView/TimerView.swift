@@ -34,9 +34,17 @@ struct CountDownView: View {
 	@Binding var timeRemaining: Int
 	let date: Date
 	let size: CGFloat
+
 	var body: some View {
 		Text("\(timeRemaining)")
-			.font(.system(size: size, design: .rounded))
+			.font(.system(size: 90, design: .rounded))
+			.fontWeight(.heavy)
+			.frame(
+				minWidth: 180,
+				maxWidth: 200,
+				minHeight: 180,
+				maxHeight: 200
+			)
 			.padding()
 			.onChange(of: date) { _, _ in
 				timeRemaining -= 1
@@ -44,27 +52,74 @@ struct CountDownView: View {
 	}
 }
 
-
 struct TimerView: View {
+	@Environment(\.dismiss) var dismiss
 	@State private var timeRemaining: Int = 3
 	@Binding var timerDone: Bool
-	let size: CGFloat
+	let exerciseName: String
 
 	var body: some View {
-		TimelineView(.animation(minimumInterval: 1.0, paused: timeRemaining <= 0)) { context in
-			CountDownView(
-				timeRemaining: $timeRemaining,
-				date: context.date,
-				size: size)
-		}
-		.onChange(of: timeRemaining) { _, _ in
-			if timeRemaining < 1 {
-				timerDone = true
+		GeometryReader { geometry in
+			ZStack {
+				Color("background")
+					.ignoresSafeArea()
+
+				let gradient = Gradient(
+					stops: [
+						.init(color: Color("gradient-top"), location: 0.7),
+						.init(color: Color("gradient-bottom"), location: 1.1)
+					]
+				)
+				
+				Circle()
+					.foregroundStyle(gradient)
+					.position(
+						x: geometry.size.width * 0.5,
+						y: -geometry.size.width * 0.2
+					)
+				
+				VStack {
+					Text(exerciseName)
+						.font(.largeTitle)
+						.fontWeight(.black)
+						.foregroundColor(.white)
+						.padding(.top, 20)
+					Spacer()
+				}
+				
+				TimelineView(.animation(minimumInterval: 1.0, paused: timeRemaining <= 0)) { context in
+					IndentView {
+						CountDownView(
+							timeRemaining: $timeRemaining,
+							date: context.date,
+							size: geometry.size.width)
+					}
+				}
+					.onChange(of: timeRemaining) { _, _ in
+						if timeRemaining < 1 {
+							timerDone = true
+						}
+					}
+
+				VStack {
+					Spacer()
+					RaisedButton(buttonText: "Done") {
+						dismiss()
+					}
+						.opacity(timerDone ? 1 : 0)
+						.padding([.leading, .trailing], 30)
+						.padding(.bottom, 60)
+						.disabled(!timerDone)
+				}
+
 			}
 		}
 	}
 }
 
 #Preview {
-	TimerView(timerDone: .constant(false), size: 90)
+	TimerView(
+		timerDone: .constant(false),
+		exerciseName: "Step Up"
+	)
 }
