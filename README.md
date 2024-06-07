@@ -26,6 +26,7 @@
 - use map to transform exerciseDay to plistData
 - use custom button style with shadow to make a neumorphic button
 - use @ViewBuilder to fix the compiler error which expects some View to be one type of view
+- use `DisclosureGroup` to display Hierarchical Data
 
 
 ## Features
@@ -127,6 +128,8 @@ struct xxx_Previews: PreviewProvider {
 - use badge modifier to provide supplementary on a list item
 - use List to add deleting feature instead of Form with Section, save the data when view disappear
 - TODO: leaves the app by swiping up from the bottom, the app may be closed by the system without saving the data, how to fix this
+- Note: If you have truly hierarchical data, such as a structure Parent containing a property children: [Parent], where children is an array of the same type as Parent, you can take advantage of SwiftUI’s automatic disclosure by initializing the list with the format List(parents, children: \.children) { parent in ... }. The list will automatically list all parents, with disclosure groups for the children.
+
 
 ## Key Points
 - The Xcode window has Navigator, Editor and Inspectors panes, a Toolbar and a Debug Area, plus a huge number of Settings.
