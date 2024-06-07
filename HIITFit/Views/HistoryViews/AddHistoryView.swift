@@ -47,7 +47,7 @@ struct AddHistoryView: View {
 					}
 				}
 			}
-			.buttonStyle(EmbossedButtonStyle())
+			.buttonStyle(EmbossedButtonStyle(buttonScale: 1.5))
 		}
 	}
 

@@ -37,6 +37,7 @@ enum EmbossedButtonShape {
 // customize buttons by setting up a structure that conforms to ButtonStyle
 struct EmbossedButtonStyle: ButtonStyle {
 	var buttonShape = EmbossedButtonShape.capsule
+	var buttonScale = 1.0
 
 	// ButtonStyle has one required method: makeBody(configuration:)
 	func makeBody(configuration: Configuration) -> some View {
@@ -54,6 +55,7 @@ struct EmbossedButtonStyle: ButtonStyle {
 					.offset(x: -1, y: -1)
 				}
 			)
+			.scaleEffect(configuration.isPressed ? buttonScale : 1.0)
 	}
 
 	// the compiler expects some View to be one type of view
