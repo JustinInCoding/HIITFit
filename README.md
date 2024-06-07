@@ -134,6 +134,8 @@ struct xxx_Previews: PreviewProvider {
 - TODO: leaves the app by swiping up from the bottom, the app may be closed by the system without saving the data, how to fix this
 - Note: If you have truly hierarchical data, such as a structure Parent containing a property children: [Parent], where children is an array of the same type as Parent, you can take advantage of SwiftUI’s automatic disclosure by initializing the list with the format List(parents, children: \.children) { parent in ... }. The list will automatically list all parents, with disclosure groups for the children.
 - Note: You can of course do anything with your data in Swift. If you had the requirement of deleting a single exercise, you might set up your data differently, so that the top level of a list would be by exercise, rather than by date. Alternatively, instead of using the built in editActions of a list, you can use the onDelete(perform:) modifier for deletion and write the deletion code yourself.
+- change the date picker’s background color to the system’s primary color, and invert it. If the system is in Light Mode, the primary color is black. When you invert black, you get white.
+- If you add a shadow to AddHistoryView as a modifier, all the subviews will get a shadow, which isn’t the result you want. Instead, you’ll add a background color to the view, and add a shadow to that
 
 
 ## Key Points

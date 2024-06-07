@@ -91,6 +91,13 @@ struct HistoryView: View {
 			}
 			if addNode {
 				AddHistoryView(addNode: $addNode)
+					.background(
+						//  change the date picker’s background color to the system’s primary color, and invert it. If the system is in Light Mode, the primary color is black. When you invert black, you get white.
+						Color.primary.colorInvert()
+							// If you add a shadow to AddHistoryView as a modifier, all the subviews will get a shadow, which isn’t the result you want. Instead, you’ll add a background color to the view, and add a shadow to that
+							.shadow(color: .primary.opacity(0.5), radius: 7)
+					)
+
 			}
 		}
 		.onDisappear{
