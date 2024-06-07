@@ -14,6 +14,7 @@
 		983E89C92C11762900752F22 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89C82C11762900752F22 /* ContainerView.swift */; };
 		983E89CB2C117D9D00752F22 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89CA2C117D9D00752F22 /* GradientBackground.swift */; };
 		983E89CD2C11A84A00752F22 /* history.plist in Resources */ = {isa = PBXBuildFile; fileRef = 983E89CC2C11A84A00752F22 /* history.plist */; };
+		983E89D02C12988800752F22 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89CF2C12988800752F22 /* AddHistoryView.swift */; };
 		98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */; };
 		98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8F2C0DC1C2007C6B3F /* ContentView.swift */; };
 		98698A922C0DC1C4007C6B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98698A912C0DC1C4007C6B3F /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		983E89C82C11762900752F22 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		983E89CA2C117D9D00752F22 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		983E89CC2C11A84A00752F22 /* history.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = history.plist; sourceTree = "<group>"; };
+		983E89CF2C12988800752F22 /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
 		98698A8A2C0DC1C2007C6B3F /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		98698A8F2C0DC1C2007C6B3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		983E89CE2C1297F200752F22 /* HistoryViews */ = {
+			isa = PBXGroup;
+			children = (
+				98D709352C0ED86000F60FEC /* HistoryView.swift */,
+				983E89CF2C12988800752F22 /* AddHistoryView.swift */,
+			);
+			path = HistoryViews;
+			sourceTree = "<group>";
+		};
 		98698A812C0DC1C2007C6B3F = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +150,7 @@
 				98D709292C0EA97700F60FEC /* HeaderView.swift */,
 				98D709312C0EC20F00F60FEC /* RatingView.swift */,
 				98D709332C0EC47500F60FEC /* VideoPlayerView.swift */,
-				98D709352C0ED86000F60FEC /* HistoryView.swift */,
+				983E89CE2C1297F200752F22 /* HistoryViews */,
 				98D7093E2C0EF81200F60FEC /* SuccessView.swift */,
 				9806E0922C0FEA7A0073930C /* TimerView.swift */,
 				983E89C22C114A8300752F22 /* WelcomeImages.swift */,
@@ -235,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983E89D02C12988800752F22 /* AddHistoryView.swift in Sources */,
 				983E89C32C114A8300752F22 /* WelcomeImages.swift in Sources */,
 				9806E0932C0FEA7A0073930C /* TimerView.swift in Sources */,
 				98D7093D2C0EEA8500F60FEC /* HistoryStoreDevData.swift in Sources */,

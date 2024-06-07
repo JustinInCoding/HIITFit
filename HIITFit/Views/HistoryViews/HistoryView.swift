@@ -33,9 +33,16 @@ import SwiftUI
 struct HistoryView: View {
 	@Binding var showHistory: Bool
 	@EnvironmentObject var historyStore: HistoryStore
+	@State private var addNode = false
 
 	var headerView: some View {
 		HStack {
+			Button {
+				addNode = true
+			} label: {
+				Image(systemName: "plus")
+			}
+			.padding(.trailing)
 			EditButton()
 			Spacer()
 			Text("History")
@@ -70,10 +77,20 @@ struct HistoryView: View {
 
 	var body: some View {
 		VStack {
-			headerView
+			Group {
+				if addNode {
+					Text("History")
+						.font(.title)
+				} else {
+					headerView
+				}
+			}
 				.padding()
 			List($historyStore.exerciseDays, editActions: [.delete]) { $day in
 				dayView(day: day)
+			}
+			if addNode {
+				AddHistoryView(addNode: $addNode)
 			}
 		}
 		.onDisappear{

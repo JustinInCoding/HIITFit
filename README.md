@@ -28,6 +28,7 @@
 - use @ViewBuilder to fix the compiler error which expects some View to be one type of view
 - use `DisclosureGroup` to display Hierarchical Data
 - add `EditButton()` to place the whole list in editing mode so you can delete multiple rows
+- add `DatePicker()` to add Node to the History
 
 
 ## Features
