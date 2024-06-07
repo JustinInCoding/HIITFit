@@ -16,6 +16,7 @@
 		983E89CD2C11A84A00752F22 /* history.plist in Resources */ = {isa = PBXBuildFile; fileRef = 983E89CC2C11A84A00752F22 /* history.plist */; };
 		983E89D02C12988800752F22 /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89CF2C12988800752F22 /* AddHistoryView.swift */; };
 		983E89D22C12ABA000752F22 /* BarChartDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89D12C12ABA000752F22 /* BarChartDayView.swift */; };
+		983E89D42C12BD0D00752F22 /* BarChartWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E89D32C12BD0C00752F22 /* BarChartWeekView.swift */; };
 		98698A8E2C0DC1C2007C6B3F /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */; };
 		98698A902C0DC1C2007C6B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98698A8F2C0DC1C2007C6B3F /* ContentView.swift */; };
 		98698A922C0DC1C4007C6B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98698A912C0DC1C4007C6B3F /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		983E89CC2C11A84A00752F22 /* history.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = history.plist; sourceTree = "<group>"; };
 		983E89CF2C12988800752F22 /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
 		983E89D12C12ABA000752F22 /* BarChartDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartDayView.swift; sourceTree = "<group>"; };
+		983E89D32C12BD0C00752F22 /* BarChartWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartWeekView.swift; sourceTree = "<group>"; };
 		98698A8A2C0DC1C2007C6B3F /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98698A8D2C0DC1C2007C6B3F /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
 		98698A8F2C0DC1C2007C6B3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 				983E89D12C12ABA000752F22 /* BarChartDayView.swift */,
 			);
 			path = HistoryViews;
+			sourceTree = "<group>";
+		};
+		983E89D52C12CB0B00752F22 /* ReportViews */ = {
+			isa = PBXGroup;
+			children = (
+				983E89D32C12BD0C00752F22 /* BarChartWeekView.swift */,
+			);
+			path = ReportViews;
 			sourceTree = "<group>";
 		};
 		98698A812C0DC1C2007C6B3F = {
@@ -150,10 +160,11 @@
 				98698A8F2C0DC1C2007C6B3F /* ContentView.swift */,
 				98698AA62C0DD5AA007C6B3F /* WelcomeView.swift */,
 				98698AA82C0DD5B1007C6B3F /* ExerciseView.swift */,
+				983E89CE2C1297F200752F22 /* HistoryViews */,
+				983E89D52C12CB0B00752F22 /* ReportViews */,
 				98D709292C0EA97700F60FEC /* HeaderView.swift */,
 				98D709312C0EC20F00F60FEC /* RatingView.swift */,
 				98D709332C0EC47500F60FEC /* VideoPlayerView.swift */,
-				983E89CE2C1297F200752F22 /* HistoryViews */,
 				98D7093E2C0EF81200F60FEC /* SuccessView.swift */,
 				9806E0922C0FEA7A0073930C /* TimerView.swift */,
 				983E89C22C114A8300752F22 /* WelcomeImages.swift */,
@@ -269,6 +280,7 @@
 				98D7093B2C0EE7FB00F60FEC /* Exercise.swift in Sources */,
 				98698AA02C0DCAC2007C6B3F /* ImageExtension.swift in Sources */,
 				98D7092A2C0EA97700F60FEC /* HeaderView.swift in Sources */,
+				983E89D42C12BD0D00752F22 /* BarChartWeekView.swift in Sources */,
 				98D709342C0EC47500F60FEC /* VideoPlayerView.swift in Sources */,
 				983E89C72C1160AC00752F22 /* EmbossedButton.swift in Sources */,
 			);

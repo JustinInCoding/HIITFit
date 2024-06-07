@@ -136,6 +136,35 @@ struct xxx_Previews: PreviewProvider {
 - Note: You can of course do anything with your data in Swift. If you had the requirement of deleting a single exercise, you might set up your data differently, so that the top level of a list would be by exercise, rather than by date. Alternatively, instead of using the built in editActions of a list, you can use the onDelete(perform:) modifier for deletion and write the deletion code yourself.
 - change the date picker’s background color to the system’s primary color, and invert it. If the system is in Light Mode, the primary color is black. When you invert black, you get white.
 - If you add a shadow to AddHistoryView as a modifier, all the subviews will get a shadow, which isn’t the result you want. Instead, you’ll add a background color to the view, and add a shadow to that
+- use `.symbol(.circle)` to draws a circle when in lineMark
+- A Catmull-Rom spline interpolates the points along a curve, making the chart smooth instead of linear.
+```
+	LineMark(
+		x: .value("Date", day.date, unit: .day),
+		y: .value("Total Count", day.exercises.count)
+	)
+	// At each data point, it draws a circle
+	.symbol(.circle)
+	// A Catmull-Rom spline interpolates the points along a curve, making the chart smooth instead of linear.
+	.interpolationMethod(.catmullRom)
+
+	PointMark(
+		x: .value("Date", day.date, unit: .day),
+		y: .value("Total Count", day.exercises.count)
+	)
+
+	AreaMark(
+		x: .value("Date", day.date, unit: .day),
+		y: .value("Total Count", day.exercises.count)
+	)
+
+	RectangleMark(
+		x: .value("Date", day.date, unit: .day),
+		y: .value("Total Count", day.exercises.count)
+	)
+```
+- You can even layer marks by placing one mark after another inside Chart { }.
+- [Privacy](https://developer.apple.com/documentation/uikit/protecting_the_user_s_privacy)
 
 
 ## Key Points
@@ -208,6 +237,18 @@ To use a collection in a ForEach loop, it needs to have a way to uniquely identi
 - Using @ViewBuilder, you can return varying types of views from methods and properties. It’s easy to create custom container views that have added styling or functionality.
 - You can layer background colors in the safe area, but don’t place any of your user interface there.
 - Gradients are an easy way to create a stand-out design. You can find interesting gradients at https://uigradients.com.
+
+- A Set is a collection of data where each element is unique. Both Set and Array have initializers to create one from the other.
+- Use List for lists of data. Editing lists is built-in.
+To show groups of data which you can collapse and expand, use a DisclosureGroup.
+- Swift Charts is a framework that displays your data in gorgeous charts with minimal code.
+- As well as bar charts, you can just as easily create line, point and area charts.
+- You can layer charts on top of each other, such as layering points on top of lines.
+- When you have groups of data, you can stack the data in a single bar. Charts will automatically create different colors for the groups.
+- You can customize any chart legends and colors.
+
+## Charts
+- For more practice with Swift Charts, visit [Swift Charts Tutorial: Getting Started](https://www.kodeco.com/36025169-swift-charts-tutorial-getting-started)
 
 ## Acknowledgements
 Thanks for the kodeco's team providing such a great book
